@@ -8,5 +8,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
-    //test branch 첫번째 test
+    //user1 test
 }
