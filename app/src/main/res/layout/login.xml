@@ -15,7 +15,7 @@
     <EditText
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:id="@+id/idInput"
+        android:id="@+id/join_id"
         android:layout_centerHorizontal="true"
         android:hint="Id"
         android:layout_marginTop="151dp" />
@@ -23,28 +23,28 @@
     <EditText
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:id="@+id/passwordInput"
+        android:id="@+id/Join_password"
         android:layout_centerHorizontal="true"
         android:hint="Password"
-        android:layout_below="@+id/idInput" />
+        android:layout_below="@+id/join_id" />
     <Button
         android:layout_width="150dp"
         android:layout_height="55dp"
         android:text="Log in"
-        android:id="@+id/signButton"
+        android:id="@+id/loginBtn"
         android:textAllCaps="false"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/passwordInput"
-        android:layout_toStartOf="@+id/signupButton" />
+        android:layout_below="@+id/Join_password"
+        android:layout_toStartOf="@+id/signup_page_Btn" />
 
     <Button
         android:layout_width="150dp"
         android:layout_height="55dp"
         android:text="Sign up"
-        android:id="@+id/signupButton"
+        android:id="@+id/signup_page_Btn"
         android:textAllCaps="false"
-        android:layout_alignTop="@+id/signButton"
-        android:layout_alignEnd="@+id/passwordInput" />
+        android:layout_alignTop="@+id/loginBtn"
+        android:layout_alignEnd="@+id/Join_password" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -52,7 +52,7 @@
         android:text="Remember login"
         android:id="@+id/checkBox"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/signButton"
+        android:layout_below="@+id/loginBtn"
         android:layout_centerHorizontal="true" />
 
 
