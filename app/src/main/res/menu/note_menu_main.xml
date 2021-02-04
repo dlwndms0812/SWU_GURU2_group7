@@ -2,16 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/actionSetting"
+        android:id="@+id/action_settings"
         android:title="Setting" />
 
     <item
         android:id="@+id/app_bar_search"
         android:title="Search"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        app:actionViewClass="android.widget.SearchView"
+        android:icon="@drawable/ic_baseline_search_24"/>
 
     <item
-        android:id="@+id/addDiary"
-        android:title="Add Diary"
-        app:showAsAction="always" />
+        android:id="@+id/addNote"
+        android:title="Add Note"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_add_circle_24"/>
 </menu>
