@@ -4,6 +4,7 @@ import android.app.SearchManager
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.database.sqlite.SQLiteOpenHelper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -11,15 +12,14 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-// 수정할 방법 찾기
+// latient 설정X
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.row.*
 import kotlinx.android.synthetic.main.row.view.*
 
 class MainActivity : AppCompatActivity() {
     // 표시할 데이터(다이어리 내용)
     val listNotes = ArrayList<Note>()
-    lateinit var tvTitle : TextView
-    lateinit var tvDesc : TextView
-    lateinit var lvNotes : ListView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,10 +27,6 @@ class MainActivity : AppCompatActivity() {
 
         // DB에서 읽어오기
         LoadQuery("%")
-
-        tvTitle = findViewById(R.id.tvTitle)
-        tvDesc = findViewById(R.id.tvDesc)
-        lvNotes = findViewById(R.id.lvNotes)
     }
 
     override fun onResume() {
@@ -66,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         //actionbar
         val mActionBar = supportActionBar
         if (mActionBar != null) {
-            //set to actionbar as subtitle of actionbar
+            //actionbar 밑에 띄움
             mActionBar.subtitle = "총 $total 개의 메모가 있습니다."
         }
     }
@@ -129,38 +125,37 @@ class MainActivity : AppCompatActivity() {
                 dbManager.delete("ID=?", selectionArgs)
                 LoadQuery("%")
             }
-            //edit//update button click
+            //수정 버튼 클릭 시
             myView.editBtn.setOnClickListener {
                 GoToUpdateFun(myNote)
             }
-            //copy btn click
+            //복사 버튼 클릭 시
             myView.copyBtn.setOnClickListener {
-                //get title
+                //제목 가져오기
                 val title = myView.tvTitle.text.toString()
-                //get description
+                //내용 가져오기
                 val desc = myView.tvDesc.text.toString()
-                //concatinate
+                //제목과 내용 합치기
                 val s = title + "\n" + desc
                 val cb = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                 cb.text = s // add to clipboard
-                Toast.makeText(this@MainActivity, "Copied...", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, "복사되었습니다.", Toast.LENGTH_SHORT).show()
             }
-            //share btn click
+            //공유 버튼 클릭 시
             myView.shareBtn.setOnClickListener {
-                //get title
+                //제목 가져오기
                 val title = myView.tvTitle.text.toString()
-                //get description
+                //내용 가져오기
                 val desc = myView.tvDesc.text.toString()
-                //concatenate
+                //제목과 내용 합치기(제목만 할지, 내용만 할지 선택)
                 val s = title + "\n" + desc
-                //share intent
+                //공유하기
                 val shareIntent = Intent()
                 shareIntent.action = Intent.ACTION_SEND
                 shareIntent.type = "text/plain"
                 shareIntent.putExtra(Intent.EXTRA_TEXT, s)
                 startActivity(Intent.createChooser(shareIntent, s))
             }
-
             return myView
         }
 

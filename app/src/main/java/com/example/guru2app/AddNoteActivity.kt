@@ -3,22 +3,18 @@ package com.example.guru2app
 import android.content.ContentValues
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.lang.Exception
+import kotlinx.android.synthetic.main.activity_add_note.*
 
 class AddNoteActivity : AppCompatActivity() {
+    val dbTable = "Notes"
     var id = 0
-    lateinit var edtTitle: EditText
-    lateinit var edtDesc: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_note)
-
-        edtTitle = findViewById(R.id.edtTitle)
-        edtDesc = findViewById(R.id.edtDesc)
 
         try {
             val bundle:Bundle = intent.extras!!

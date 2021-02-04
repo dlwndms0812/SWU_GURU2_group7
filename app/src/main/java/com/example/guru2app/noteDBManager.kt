@@ -41,7 +41,7 @@ class noteDBManager {
 
         override fun onCreate(db: SQLiteDatabase?) {
             db!!.execSQL(sqlCreateTable)
-            Toast.makeText(this.context, "database created...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this.context, "데이터베이스 생성", Toast.LENGTH_SHORT).show()
         }
 
         override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
