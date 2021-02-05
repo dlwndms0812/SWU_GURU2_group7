@@ -111,14 +111,14 @@ class MainActivity : AppCompatActivity() {
             this.listNotesAdapter = listNotesAdapter
             this.context = context
         }
-
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
             //inflate layout row.xml
             var myView = layoutInflater.inflate(R.layout.row, null)
             val myNote = listNotesAdapter[position]
             myView.tvTitle.text = myNote.nodeName
             myView.tvDesc.text = myNote.nodeDes
-            //delete button click
+
+            //삭제 버튼 클릭 시
             myView.deleteBtn.setOnClickListener {
                 var dbManager = noteDBManager(this.context!!)
                 val selectionArgs = arrayOf(myNote.nodeID.toString())
@@ -156,6 +156,13 @@ class MainActivity : AppCompatActivity() {
                 shareIntent.putExtra(Intent.EXTRA_TEXT, s)
                 startActivity(Intent.createChooser(shareIntent, s))
             }
+
+            myView.moreBtn.setOnClickListener {
+
+
+            }
+
+
             return myView
         }
 
@@ -177,7 +184,7 @@ class MainActivity : AppCompatActivity() {
         var intent = Intent(this, AddNoteActivity::class.java)
         intent.putExtra("ID", myNote.nodeID) //put id
         intent.putExtra("name", myNote.nodeName) //ut name
-        intent.putExtra("des", myNote.nodeDes) //put description
+        intent.putExtra("desc", myNote.nodeDes) //put description
         startActivity(intent) //start activity
     }
 

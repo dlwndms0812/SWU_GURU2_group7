@@ -25,15 +25,23 @@
             android:layout_height="wrap_content"
             android:text="제목"
             android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp"/>
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#99808080"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
 
         <TextView
             android:id="@+id/tvDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="내용"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:maxLines="3"
+            android:ellipsize="end"/>
 
 
         <View
@@ -45,8 +53,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="end"
+            android:gravity="right"
             android:orientation="horizontal">
+
+
 
             <ImageButton
                 android:id="@+id/deleteBtn"
@@ -85,6 +95,16 @@
                 android:src="@drawable/ic_baseline_share_24" />
 
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/moreBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@null"
+            android:clickable="true"
+            android:src="@drawable/ic_baseline_arrow_drop_down_24"
+            />
 
     </LinearLayout>
 

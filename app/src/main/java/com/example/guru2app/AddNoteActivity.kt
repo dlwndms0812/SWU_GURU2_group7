@@ -9,7 +9,6 @@ import java.lang.Exception
 import kotlinx.android.synthetic.main.activity_add_note.*
 
 class AddNoteActivity : AppCompatActivity() {
-    val dbTable = "Notes"
     var id = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,4 +51,7 @@ class AddNoteActivity : AppCompatActivity() {
             }
         }
     }
+
+
+
 }
