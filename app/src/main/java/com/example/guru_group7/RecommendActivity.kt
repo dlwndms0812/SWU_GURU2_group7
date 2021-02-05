@@ -4,13 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity :AppCompatActivity() {
-
+class RecommendActivity:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.recommend_weather)
 
-        val go_login= Intent(this,LoginActivity::class.java)
-        startActivity(go_login)
     }
 }

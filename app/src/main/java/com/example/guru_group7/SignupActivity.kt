@@ -37,7 +37,6 @@ class SignupActivity() :AppCompatActivity(), Parcelable {
         deleteBtn = findViewById<Button>(R.id.delete_Btn)
 
         signupBtn.setOnClickListener {
-            //여기가 오류라고 뜸
             sign()
             startActivity(gologin)
         }
@@ -48,19 +47,18 @@ class SignupActivity() :AppCompatActivity(), Parcelable {
 
 
     private fun sign(){
-        firebaseAuth!!.createUserWithEmailAndPassword(joinid.text.toString(), joinpassword.text.toString())
-            .addOnCompleteListener(this) {
-                if (it.isSuccessful) {
-                    val user = firebaseAuth?.currentUser
-                    Toast.makeText(this, "가입 성공", Toast.LENGTH_SHORT).show()
+        FirebaseAuth.getInstance().createUserWithEmailAndPassword(joinid.text.toString(),joinpassword.text.toString())
+                .addOnCompleteListener {task->
+                    if(task.isSuccessful) {
+                        Toast.makeText(this, "가입 성공", Toast.LENGTH_LONG).show()
 
-
-                } else {
-                    Toast.makeText(this, "가입 실패", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "가입 실패", Toast.LENGTH_LONG).show()
                 }
             }
 
     }
+
     override fun writeToParcel(parcel: Parcel, flags: Int) {
 
     }
@@ -78,4 +76,5 @@ class SignupActivity() :AppCompatActivity(), Parcelable {
             return arrayOfNulls(size)
         }
     }
+
 }
