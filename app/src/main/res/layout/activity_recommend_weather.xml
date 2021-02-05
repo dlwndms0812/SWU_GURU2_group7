@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Recommend_weather"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?attr/actionBarSize">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/main_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back"
+            android:contentDescription="@string/StringValue"/>
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_design"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="14dp" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_snowy"
+            android:layout_width="105dp"
+            android:layout_height="94dp"
+            android:background="@drawable/button_round"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.761"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="0.821"
+            app:srcCompat="@drawable/snowy" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_sunny"
+            android:layout_width="105dp"
+            android:layout_height="94dp"
+            android:background="@drawable/button_round"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="0.341"
+            app:srcCompat="@drawable/sunny" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_sunCloudy"
+            android:layout_width="105dp"
+            android:layout_height="94dp"
+            android:background="@drawable/button_round"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.901"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="0.555"
+            app:srcCompat="@drawable/cloudy" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_cloudy"
+            android:layout_width="105dp"
+            android:layout_height="94dp"
+            android:background="@drawable/button_round"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.114"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="0.557"
+            app:srcCompat="@drawable/sun_cloudy" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_rainy"
+            android:layout_width="105dp"
+            android:layout_height="94dp"
+            android:background="@drawable/button_round"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.245"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="0.817"
+            app:srcCompat="@drawable/rainy" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mind_weather"
+            android:textAlignment="center"
+            android:textColor="#C8000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.57" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:menu="@menu/menu_bottom_navigation"
+        app:labelVisibilityMode="unlabeled"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@color/cloudColor"
+        app:itemTextColor="@color/cloudColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

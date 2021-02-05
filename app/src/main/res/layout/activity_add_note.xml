@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AddNoteActivity">
+
+    <ImageView
+        android:id="@+id/Note_mainBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center_horizontal"
+                        android:padding="8dp"
+                        android:singleLine="true"
+                        android:text="@string/choose_weather"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/emotion1"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_margin="2dp"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_round"
+                            android:backgroundTint="@color/cloudColor"
+                            android:contentDescription="@string/StringValue"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/emotion2"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/sunny" />
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/emotion2"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_margin="2dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_round"
+                            android:backgroundTint="@color/cloudColor"
+                            android:contentDescription="@string/StringValue"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/emotion3"
+                            app:layout_constraintStart_toEndOf="@+id/emotion1"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/sun_cloudy" />
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/emotion3"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_margin="2dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_round"
+                            android:backgroundTint="@color/cloudColor"
+                            android:contentDescription="@string/StringValue"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/emotion4"
+                            app:layout_constraintStart_toEndOf="@+id/emotion2"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25"
+                            app:srcCompat="@drawable/cloudy" />
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/emotion4"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_margin="2dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_round"
+                            android:backgroundTint="@color/cloudColor"
+                            android:contentDescription="@string/StringValue"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/emotion5"
+                            app:layout_constraintStart_toEndOf="@+id/emotion3"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25"
+                            app:srcCompat="@drawable/rainy" />
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/emotion5"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_margin="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_round"
+                            android:backgroundTint="@color/cloudColor"
+                            android:contentDescription="@string/StringValue"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/emotion4"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25"
+                            app:srcCompat="@drawable/snowy" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <EditText
+                        android:id="@+id/edtTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/edt_rectangle"
+                        android:backgroundTint="@android:color/darker_gray"
+                        android:layout_marginBottom="4dp"
+                        android:hint="제목을 입력하세요"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/edtDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="104dp"
+                        android:background="@drawable/edt_rectangle"
+                        android:backgroundTint="@android:color/darker_gray"
+                        android:gravity="top"
+                        android:hint="내용을 입력하세요"
+                        android:minHeight="100dp"
+                        android:padding="10dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right">
+
+                <Button
+                    android:id="@+id/photoBtn"
+                    android:layout_width="38dp"
+                    android:layout_height="37dp"
+                    android:layout_gravity="right"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/ic_camera_alt"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/addBtn"
+                    app:layout_constraintHorizontal_bias="0.949"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.833" />
+
+                <Button
+                    android:id="@+id/addBtn"
+                    android:layout_width="76dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="right"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/button_media"
+                    android:backgroundTint="#FD9494"
+                    android:onClick="addFunc"
+                    android:text="입력"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
