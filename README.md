@@ -4,7 +4,9 @@ main과 master branch는 아직은 사용 안할 거에요!
 
 혹시 branch 생성 안되시면 말씀해주세요!
 
-calander, test, user1 branch는 테스트한다고 제가 만든거에요^^;; ->현재 삭제했어요
+calander, test, user1 branch는 테스트한다고 제가 만든거에요^^;; 
+
+->현재 삭제했어요
 
 지금은 제가 login 구현한다고 login branch 생성 해놨어요
 
