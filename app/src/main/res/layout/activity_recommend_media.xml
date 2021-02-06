@@ -55,22 +55,6 @@
                     android:layout_height="wrap_content">
 
                     <!--당신의 마음과 함께 할, 글씨 이미지-->
-                    <TextView
-                        android:id="@+id/recommend_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="21dp"
-                        android:fontFamily="sans-serif"
-                        android:text="@string/recommend_text"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toTopOf="@+id/imgBtn_music"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.497"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.825" />
 
                     <!--음악 이미지 버튼-->
                     <ImageButton
@@ -115,6 +99,17 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imgBtn_movie" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="220dp"
+                        android:layout_height="32dp"
+                        app:layout_constraintBottom_toTopOf="@+id/imgBtn_music"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.67"
+                        app:srcCompat="@drawable/media_text" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

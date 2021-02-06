@@ -48,7 +48,6 @@
             android:layout_width="0dp"
             android:layout_height="492dp"
             android:orientation="vertical"
-            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +56,6 @@
             tools:context=".MainActivity">
 
             <!--SQLite/database로부터 다이어리 내용을 가져옵니다-->
-
             <ListView
                 android:id="@+id/lvNotes"
                 android:layout_width="match_parent"
@@ -89,5 +87,18 @@
         tools:ignore="MissingConstraints">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="118dp"
+        android:layout_height="42dp"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/StringValue"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:srcCompat="@drawable/diary_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
