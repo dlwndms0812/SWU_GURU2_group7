@@ -1,32 +1,60 @@
 <resources>
+    <!--앱 이름-->
     <string name="app_name">날, 보러와요</string>
-    <!--    로그인 부분-->
+
+    <!--로그인 부분-->
     <string name="ID"> 아이디</string>
     <string name="str_password"> 비밀번호</string>
     <string name="login"> 로그인</string>
     <string name="join_yet">앗, 아직 회원이 아니신가요?</string>
     <string name="join_us">회원가입</string>
-    <!--    회원가입 부분-->
+
+    <!--회원가입 부분-->
     <string name="name"> 이름</string>
     <string name="check">확인</string>
     <string name="str_passwd_check"> 비밀번호 확인</string>
     <string name="cancel"> 취소</string>
-    <!--    비밀번호 변경-->
-    <string name="current_passwd"> 현재 비밀번호</string>
-    <string name="new_passwd"> 새로운 비밀번호</string>
-    <string name="change">변경</string>
-    <!--    노래, 영화, 음악 추천-->
+
+    <!--비밀번호 변경-->
+    <string name="emailAddress">이메일 주소</string>
+    <string name="change_passwd">비밀번호 변경</string>
+    <string name="goLoginPage">로그인 페이지로</string>
+
+    <!--캘린더-->
+    <string name="how">오늘 하루는 어땠나요?</string>
+    <string name="delete">삭제</string>
+    <string name="modify">수정</string>
+    <string name="save">저장</string>
+
+    <!--노래/영화/음악 추천-->
     <string name="recommend_text">당신의 마음과 함께 할,</string>
     <string name="mind_weather">오늘 당신의\n마음 날씨는?</string>
-    <string name="menu_title1">마음 일기장</string>
-    <string name="menu_title2">칭찬 다이어리</string>
-    <string name="menu_title3">추천 미디어</string>
-    <string name="menu_title4">마이페이지</string>
+    <string name="menu_title1">Calendar</string>
+    <string name="menu_title2">Diary</string>
+    <string name="menu_title3">Media</string>
+    <string name="menu_title4">MY Page</string>
     <string name="music">MUSIC</string>
     <string name="movie">MOVIE</string>
     <string name="hobby">HOBBY</string>
-<!--    노트 페이지-->
+
+    <!--    노트 페이지-->
     <string name="choose_weather">마음의 날씨를 선택하세요</string>
-    <!--    예외-->
-    <string name="StringValue">이미지가 열리지 않습니다.</string>
+    <string name="noteTitle">제목을 입력하세요</string>
+    <string name="noteContents">내용을 입력하세요</string>
+    <string name="enter">입력</string>
+
+    <!--음악/영화/취미 콘텐츠 한개-->
+    <string name="content">content</string>
+    <string name="title">TITLE</string>
+
+    <!--메뉴-->
+    <string name="logout">로그아웃</string>
+    <string name="setting">설정</string>
+    <string name="search">검색</string>
+    <string name="add_note">추가</string>
+
+    <!--예외처리-->
+    <string name="StringValue">이미지 오류</string>
+
+
 </resources>

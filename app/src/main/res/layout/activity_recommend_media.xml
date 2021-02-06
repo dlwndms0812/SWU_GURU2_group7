@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--음악/영화/취미 추천, 음악, 영화, 취미 중 택1 페이지-->
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,13 +9,14 @@
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main_layout2"
+        android:id="@+id/media_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="?attr/actionBarSize">
 
+        <!--배경 이미지-->
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/mediaBack"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/StringValue"
@@ -24,9 +26,10 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/back" />
 
+        <!--상단 툴바-->
         <include
             android:id="@+id/toolbar"
-            layout="@layout/toolbar_design"
+            layout="@layout/toolbar_not"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +43,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3">
+            app:layout_constraintTop_toBottomOf="@+id/mediaBack">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -51,6 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
+                    <!--당신의 마음과 함께 할, 글씨 이미지-->
                     <TextView
                         android:id="@+id/recommend_text"
                         android:layout_width="wrap_content"
@@ -68,7 +72,8 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.825" />
 
-                    <androidx.appcompat.widget.AppCompatImageButton
+                    <!--음악 이미지 버튼-->
+                    <ImageButton
                         android:id="@+id/imgBtn_music"
                         android:layout_width="322dp"
                         android:layout_height="186dp"
@@ -76,24 +81,28 @@
                         android:background="#00FFFFFF"
                         android:foreground="@drawable/music_recommend"
                         android:scaleType="centerCrop"
+                        android:contentDescription="@string/StringValue"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.505"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <androidx.appcompat.widget.AppCompatImageButton
+                    <!--영화 이미지 버튼-->
+                    <ImageButton
                         android:id="@+id/imgBtn_movie"
                         android:layout_width="322dp"
                         android:layout_height="186dp"
                         android:layout_marginTop="24dp"
                         android:foreground="@drawable/movie_recommend"
                         android:scaleType="centerCrop"
+                        android:contentDescription="@string/StringValue"
                         app:layout_constraintBottom_toTopOf="@+id/imgBtn_hobby"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imgBtn_music" />
 
-                    <androidx.appcompat.widget.AppCompatImageButton
+                    <!--취미 이미지 버튼-->
+                    <ImageButton
                         android:id="@+id/imgBtn_hobby"
                         android:layout_width="322dp"
                         android:layout_height="186dp"
@@ -101,6 +110,7 @@
                         android:layout_marginBottom="8dp"
                         android:foreground="@drawable/hobby_recommend"
                         android:scaleType="centerCrop"
+                        android:contentDescription="@string/StringValue"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -114,6 +124,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!--하단 네비게이션바-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"

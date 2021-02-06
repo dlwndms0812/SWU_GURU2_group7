@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--note 추가 페이지-->
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_height="match_parent"
     android:layout_width="wrap_content"
@@ -7,20 +8,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".AddNoteActivity">
 
+    <!--배경-->
     <ImageView
         android:id="@+id/Note_mainBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:src="@drawable/login_back"
+        android:src="@drawable/back"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/StringValue"/>
+
+    <!--상단 툴바-->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_not"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="0dp"
+        android:layout_height="537dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="UnknownIdInLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,21 +62,20 @@
                     android:layout_margin="10dp"
                     android:orientation="vertical">
 
-                    <TextView
+                    <!--마음의 날씨 선택하라는 텍스트 부분-->
+                    <ImageView
+                        android:id="@+id/imageView4"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@null"
-                        android:gravity="center_horizontal"
-                        android:padding="8dp"
-                        android:singleLine="true"
-                        android:text="@string/choose_weather"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:layout_height="46dp"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/note_text"
+                        android:contentDescription="@string/StringValue" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
+                        <!--맑음 icon-->
                         <androidx.appcompat.widget.AppCompatImageButton
                             android:id="@+id/emotion1"
                             android:layout_width="72dp"
@@ -74,6 +94,7 @@
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@drawable/sunny" />
 
+                        <!--조금 흐림 icon-->
                         <androidx.appcompat.widget.AppCompatImageButton
                             android:id="@+id/emotion2"
                             android:layout_width="72dp"
@@ -92,6 +113,7 @@
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@drawable/sun_cloudy" />
 
+                        <!--흐림 icon-->
                         <androidx.appcompat.widget.AppCompatImageButton
                             android:id="@+id/emotion3"
                             android:layout_width="72dp"
@@ -111,6 +133,7 @@
                             app:layout_constraintVertical_bias="0.25"
                             app:srcCompat="@drawable/cloudy" />
 
+                        <!--비 icon-->
                         <androidx.appcompat.widget.AppCompatImageButton
                             android:id="@+id/emotion4"
                             android:layout_width="72dp"
@@ -130,6 +153,7 @@
                             app:layout_constraintVertical_bias="0.25"
                             app:srcCompat="@drawable/rainy" />
 
+                        <!--눈 icon-->
                         <androidx.appcompat.widget.AppCompatImageButton
                             android:id="@+id/emotion5"
                             android:layout_width="72dp"
@@ -149,6 +173,7 @@
                             app:srcCompat="@drawable/snowy" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -164,31 +189,42 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_margin="10dp">
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
 
+                   <!--제목을 입력하세요 EditText-->
                     <EditText
                         android:id="@+id/edtTitle"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@drawable/edt_rectangle"
-                        android:backgroundTint="@android:color/darker_gray"
-                        android:layout_marginBottom="4dp"
-                        android:hint="제목을 입력하세요"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/noteTitle"
                         android:padding="10dp"
                         android:singleLine="true"
-                        android:textStyle="bold" />
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:autofillHints="no" />
 
+                    <!--구분선-->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="#99808080" />
+
+                    <!--내용을 입력하세요 EditText-->
                     <EditText
                         android:id="@+id/edtDesc"
                         android:layout_width="match_parent"
-                        android:layout_height="104dp"
-                        android:background="@drawable/edt_rectangle"
-                        android:backgroundTint="@android:color/darker_gray"
+                        android:layout_height="116dp"
+                        android:backgroundTint="@color/white"
                         android:gravity="top"
-                        android:hint="내용을 입력하세요"
+                        android:hint="@string/noteContents"
                         android:minHeight="100dp"
-                        android:padding="10dp" />
+                        android:padding="10dp"
+                        android:textSize="16sp"
+                        android:autofillHints="no" />
 
                 </LinearLayout>
 
@@ -197,16 +233,16 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="right">
+                android:orientation="horizontal">
 
+                <!--카메라 버튼-->
                 <Button
                     android:id="@+id/photoBtn"
-                    android:layout_width="38dp"
-                    android:layout_height="37dp"
-                    android:layout_gravity="right"
+                    android:layout_width="37dp"
+                    android:layout_height="36dp"
                     android:layout_marginBottom="3dp"
                     android:background="@drawable/ic_camera_alt"
+                    android:backgroundTint="@color/pink"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/addBtn"
                     app:layout_constraintHorizontal_bias="0.949"
@@ -214,17 +250,17 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.833" />
 
+                <!--입력 버튼-->
                 <Button
                     android:id="@+id/addBtn"
                     android:layout_width="76dp"
                     android:layout_height="43dp"
-                    android:layout_gravity="right"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="3dp"
                     android:background="@drawable/button_media"
-                    android:backgroundTint="#FD9494"
-                    android:onClick="addFunc"
-                    android:text="입력"
+                    android:backgroundTint="@color/pink"
+                    android:text="@string/enter"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"

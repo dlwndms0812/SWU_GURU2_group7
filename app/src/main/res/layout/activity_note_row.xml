@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<!--note 적는 페이지-->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
     app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="10dp"
     app:cardElevation="3dp"
-    app:cardUseCompatPadding="true"
-    android:foreground="?android:attr/selectableItemBackground"
-    android:clickable="true">
-
+    app:cardUseCompatPadding="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,44 +20,48 @@
         android:gravity="end|bottom"
         android:orientation="vertical">
 
+        <!--제목 입력 TextView-->
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="제목"
+            android:text="@string/noteTitle"
             android:textSize="22sp"
             android:textStyle="bold" />
 
+        <!--구분선-->
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="#99808080"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="8dp"
+            android:background="#99808080" />
 
+        <!--내용 입력 TextView-->
         <TextView
             android:id="@+id/tvDesc"
             android:layout_width="match_parent"
-            android:layout_height="139dp"
+            android:layout_height="68dp"
             android:ellipsize="end"
             android:maxLines="3"
-            android:text="내용"
+            android:text="@string/noteContents"
             android:textSize="18sp" />
 
-
+        <!--구분선-->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="2dp"/>
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="3dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="RtlHardcoded">
 
-
+            <!--삭제 버튼-->
             <ImageButton
                 android:id="@+id/deleteBtn"
                 android:layout_width="wrap_content"
@@ -65,8 +70,10 @@
                 android:layout_marginRight="5dp"
                 android:background="@null"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_baseline_delete_24" />
+                android:src="@drawable/ic_baseline_delete_24"
+                android:contentDescription="@string/StringValue"/>
 
+            <!--적는 버튼-->
             <ImageButton
                 android:id="@+id/editBtn"
                 android:layout_width="wrap_content"
@@ -75,8 +82,10 @@
                 android:layout_marginRight="5dp"
                 android:background="@null"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_baseline_edit_24" />
+                android:src="@drawable/ic_baseline_edit_24"
+                android:contentDescription="@string/StringValue"/>
 
+            <!--복사 버튼-->
             <ImageButton
                 android:id="@+id/copyBtn"
                 android:layout_width="wrap_content"
@@ -85,8 +94,10 @@
                 android:layout_marginRight="5dp"
                 android:background="@null"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_baseline_content_copy_24" />
+                android:src="@drawable/ic_baseline_content_copy_24"
+                android:contentDescription="@string/StringValue"/>
 
+            <!--공유 버튼-->
             <ImageButton
                 android:id="@+id/shareBtn"
                 android:layout_width="wrap_content"
@@ -95,10 +106,12 @@
                 android:layout_marginRight="5dp"
                 android:background="@null"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_baseline_share_24" />
+                android:src="@drawable/ic_baseline_share_24"
+                android:contentDescription="@string/StringValue"/>
 
         </LinearLayout>
 
+        <!--더보기 버튼-->
         <ImageButton
             android:id="@+id/moreBtn"
             android:layout_width="wrap_content"
@@ -107,8 +120,9 @@
             android:background="@null"
             android:clickable="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_baseline_arrow_drop_down_24" />
+            android:src="@drawable/ic_baseline_arrow_drop_down_24"
+            android:contentDescription="@string/StringValue"
+            android:focusable="true" />
 
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>

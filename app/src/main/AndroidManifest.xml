@@ -9,7 +9,9 @@
         android:roundIcon="@drawable/logo_main"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Note_row"></activity>
+        <activity android:name=".media_hobby"/>
+        <activity android:name=".Media_Movie" />
+        <activity android:name=".Calendar" />
         <activity android:name=".Note_MainActivity" />
         <activity android:name=".AddNoteActivity" />
         <activity android:name=".Password_change" />
