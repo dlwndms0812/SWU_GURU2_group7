@@ -14,6 +14,11 @@
         <activity android:name=".SignupActivity"></activity>
         <activity android:name=".PasswordActivity"></activity>
         <activity android:name=".RecommendActivity"></activity>
+        <activity android:name=".CloudyActivity"></activity>
+        <activity android:name=".RainyActivity"></activity>
+        <activity android:name=".SnowActivity"></activity>
+        <activity android:name=".Sunny_mediaActivity"></activity>
+        <activity android:name=".SunnycloudyActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -36,6 +36,7 @@ class SignupActivity() :AppCompatActivity(), Parcelable {
         signupBtn = findViewById<Button>(R.id.signup_Btn)
         deleteBtn = findViewById<Button>(R.id.delete_Btn)
 
+        //이름은 걍 냅두고 비밀번호 확인이랑 비밀번호랑 다르면 if문으로 sign버튼 안눌리게 하기
         signupBtn.setOnClickListener {
             sign()
             startActivity(gologin)

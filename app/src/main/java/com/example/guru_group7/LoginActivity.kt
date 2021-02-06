@@ -54,6 +54,7 @@ class LoginActivity : AppCompatActivity() {
                     //Sign in success, update UI with the signed-in user's information
                     Toast.makeText(this,"로그인 성공",Toast.LENGTH_SHORT).show()
                     val user=firebaseAuth?.currentUser
+                    //여기다가 인텐트 하기
 
                 } else {
                     //If sign in fails, display a message to the user
