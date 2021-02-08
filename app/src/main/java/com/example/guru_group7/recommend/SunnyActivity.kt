@@ -7,7 +7,7 @@ import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.guru_group7.R
 
-class Sunny_mediaActivity:AppCompatActivity() {
+class SunnyActivity:AppCompatActivity() {
     lateinit var imgBtn_music : ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?){

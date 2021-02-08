@@ -17,13 +17,14 @@
         <activity android:name=".recommend.CloudyActivity"></activity>
         <activity android:name=".recommend.RainyActivity"></activity>
         <activity android:name=".recommend.SnowActivity"></activity>
-        <activity android:name=".recommend.Sunny_mediaActivity"></activity>
+        <activity android:name=".recommend.SunnyActivity"></activity>
         <activity android:name=".recommend.SunnycloudyActivity"></activity>
         <activity android:name=".recommend.CloudyMovie"></activity>
         <activity android:name=".recommend.RainyMovie"></activity>
         <activity android:name=".recommend.SnowMovie"></activity>
         <activity android:name=".recommend.SunnyCloudyMovie"></activity>
         <activity android:name=".recommend.SunnyMovie"></activity>
+        <activity android:name=".recommend.Activitylist"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
