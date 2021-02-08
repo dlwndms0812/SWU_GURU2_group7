@@ -24,7 +24,6 @@
         <activity android:name=".recommend.SnowMovie"></activity>
         <activity android:name=".recommend.SunnyCloudyMovie"></activity>
         <activity android:name=".recommend.SunnyMovie"></activity>
-        <activity android:name=".recommend.Activitylist"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
