@@ -4,7 +4,6 @@ import android.app.SearchManager
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
-import android.database.sqlite.SQLiteOpenHelper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -17,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.row.*
 import kotlinx.android.synthetic.main.row.view.*
 
-class MainActivity : AppCompatActivity() {
+class NoteMainActivity : AppCompatActivity() {
     // 표시할 데이터(다이어리 내용)
     val listNotes = ArrayList<Note>()
 
@@ -36,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun LoadQuery(title: String) {
         var dbManager = noteDBManager(this)
-        val projections = arrayOf("ID", "Title", "Description")
+        val projections = arrayOf("ID", "Title", "Description", "Mood")
         val selectionArgs = arrayOf(title)
         val cursor = dbManager.Query(projections, "Title like ?", selectionArgs, "Title")
         listNotes.clear()
@@ -46,8 +45,9 @@ class MainActivity : AppCompatActivity() {
                 val ID = cursor.getInt(cursor.getColumnIndex("ID"))
                 val Title = cursor.getString(cursor.getColumnIndex("Title"))
                 val Description = cursor.getString(cursor.getColumnIndex("Description"))
+                val Mood = cursor.getInt(cursor.getColumnIndex("Mood"))
 
-                listNotes.add(Note(ID, Title, Description))
+                listNotes.add(Note(ID, Title, Description, Mood))
 
             } while (cursor.moveToNext())
         }
@@ -139,7 +139,7 @@ class MainActivity : AppCompatActivity() {
                 val s = title + "\n" + desc
                 val cb = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                 cb.text = s // add to clipboard
-                Toast.makeText(this@MainActivity, "복사되었습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@NoteMainActivity, "복사되었습니다.", Toast.LENGTH_SHORT).show()
             }
             //공유 버튼 클릭 시
             myView.shareBtn.setOnClickListener {
@@ -156,12 +156,6 @@ class MainActivity : AppCompatActivity() {
                 shareIntent.putExtra(Intent.EXTRA_TEXT, s)
                 startActivity(Intent.createChooser(shareIntent, s))
             }
-
-            myView.moreBtn.setOnClickListener {
-
-
-            }
-
 
             return myView
         }

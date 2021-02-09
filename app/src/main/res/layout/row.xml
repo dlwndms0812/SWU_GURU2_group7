@@ -19,6 +19,27 @@
         android:gravity="end|bottom"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingRight="4dp"
+                android:text="작성 날짜" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_wb_sunny_24" />
+
+
+        </LinearLayout>
+
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
@@ -95,16 +116,6 @@
                 android:src="@drawable/ic_baseline_share_24" />
 
         </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/moreBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@null"
-            android:clickable="true"
-            android:src="@drawable/ic_baseline_arrow_drop_down_24"
-            />
 
     </LinearLayout>
 

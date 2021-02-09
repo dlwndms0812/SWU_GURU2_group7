@@ -47,7 +47,7 @@
                     android:layout_height="wrap_content">
 
                     <Button
-                        android:id="@+id/emotion1"
+                        android:id="@+id/mood_sunny"
                         android:layout_width="wrap_content"
                         android:layout_height="120dp"
                         android:layout_weight="1"
@@ -55,7 +55,7 @@
                         android:text="맑음"/>
 
                     <Button
-                        android:id="@+id/emotion2"
+                        android:id="@+id/mood_cloudy"
                         android:layout_width="wrap_content"
                         android:layout_height="120dp"
                         android:layout_weight="1"
@@ -63,7 +63,7 @@
                         android:text="흐림"/>
 
                     <Button
-                        android:id="@+id/emotion3"
+                        android:id="@+id/mood_rainy"
                         android:layout_width="wrap_content"
                         android:layout_height="120dp"
                         android:layout_weight="1"
@@ -71,7 +71,7 @@
                         android:text="비"/>
 
                     <Button
-                        android:id="@+id/emotion4"
+                        android:id="@+id/mood_snowy"
                         android:layout_width="wrap_content"
                         android:layout_height="120dp"
                         android:layout_weight="1"
@@ -79,7 +79,7 @@
                         android:text="눈"/>
 
                     <Button
-                        android:id="@+id/emotion5"
+                        android:id="@+id/mood_rainbow"
                         android:layout_width="wrap_content"
                         android:layout_height="120dp"
                         android:layout_weight="1"

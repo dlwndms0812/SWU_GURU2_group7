@@ -18,6 +18,7 @@ class noteDBManager {
     var colID = "ID"
     var colTitle = "Title"
     var colDes = "Description"
+    var colMood = "Mood"
     // 데이터 베이스 버전
     var dbVersion = 1
 
@@ -45,7 +46,7 @@ class noteDBManager {
         }
 
         override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-            db!!.execSQL("Drop table if Exists" + dbTable)
+            db!!.execSQL("DROP TABLE IF EXISTS" + dbTable)
         }
     }
 
