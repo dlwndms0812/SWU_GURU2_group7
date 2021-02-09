@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardBackgroundColor="@color/white"
@@ -9,78 +10,85 @@
     app:cardElevation="3dp"
     app:cardUseCompatPadding="true"
     android:foreground="?android:attr/selectableItemBackground"
-    android:clickable="true">
-
+    android:clickable="true"
+    android:focusable="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
+        android:layout_margin="10dp"
         android:gravity="end|bottom"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:paddingRight="4dp"
+            android:text="작성 날짜"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="right">
-
-            <TextView
-                android:id="@+id/tvDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingRight="4dp"
-                android:text="작성 날짜" />
+            >
 
             <ImageView
                 android:id="@+id/ivMood"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_question" />
-
+                android:src="@drawable/ic_question"
+                android:layout_gravity="center"
+                android:paddingRight="10dp"/>
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="제목"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="제목"
-            android:textSize="22sp"
-            android:textStyle="bold"/>
+
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="#99808080"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="8dp"
+            android:background="#99808080"/>
 
-        <TextView
+        <kr.co.prnd.readmore.ReadMoreTextView
             android:id="@+id/tvDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="내용"
             android:textSize="18sp"
-            android:maxLines="3"
-            android:ellipsize="end"/>
+            app:readMoreMaxLine="3"
+            app:readMoreText=" ...더보기"/>
+           <!-- app:readMoreColor=""-->
+        <!--implementation 'kr.co.prnd:readmore-textview:1.0.0'-->
 
 
+        <!-- 구분선 -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="2dp"/>
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="3dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="RtlHardcoded"
+            >
 
 
-
+            <!--삭제-->
             <ImageButton
                 android:id="@+id/deleteBtn"
                 android:layout_width="wrap_content"
@@ -90,6 +98,7 @@
                 android:background="@null"
                 android:src="@drawable/ic_baseline_delete_24"/>
 
+            <!--수정-->
             <ImageButton
                 android:id="@+id/editBtn"
                 android:layout_width="wrap_content"
