@@ -117,6 +117,15 @@ class NoteMainActivity : AppCompatActivity() {
             val myNote = listNotesAdapter[position]
             myView.tvTitle.text = myNote.nodeName
             myView.tvDesc.text = myNote.nodeDes
+            var selMood = myNote.nodeMood
+            when {
+                selMood == 1 -> myView.ivMood.setImageResource(R.drawable.ic_baseline_wb_sunny_24)
+                selMood == 2 -> myView.ivMood.setImageResource(R.drawable.ic_baseline_umbrella_24)
+                selMood == 3 -> myView.ivMood.setImageResource(R.drawable.ic_baseline_wb_cloudy_24)
+                selMood == 4 -> myView.ivMood.setImageResource(R.drawable.ic_snowy16)
+                selMood == 5 -> myView.ivMood.setImageResource(R.drawable.ic_rainbow)
+                else -> myView.ivMood.setImageResource(R.drawable.ic_question)
+            }
 
             //삭제 버튼 클릭 시
             myView.deleteBtn.setOnClickListener {
@@ -179,6 +188,7 @@ class NoteMainActivity : AppCompatActivity() {
         intent.putExtra("ID", myNote.nodeID) //put id
         intent.putExtra("name", myNote.nodeName) //ut name
         intent.putExtra("desc", myNote.nodeDes) //put description
+        intent.putExtra("mood", myNote.nodeMood)
         startActivity(intent) //start activity
     }
 

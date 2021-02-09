@@ -8,12 +8,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.lang.Exception
 import kotlinx.android.synthetic.main.activity_add_note.*
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 class AddNoteActivity : AppCompatActivity() {
     private var id = 0
-    private var selEmotion = 0
+    private var selMood = 0
     //val date = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
     lateinit var mood_sunny: Button
     lateinit var mood_rainy: Button
@@ -31,6 +29,22 @@ class AddNoteActivity : AppCompatActivity() {
         mood_snowy = findViewById<Button>(R.id.mood_snowy)
         mood_rainbow = findViewById<Button>(R.id.mood_rainbow)
 
+        val clickListener = View.OnClickListener { view ->
+            when (view.getId()) {
+                R.id.mood_sunny -> selMood = 1
+                R.id.mood_rainy -> selMood = 2
+                R.id.mood_cloudy -> selMood = 3
+                R.id.mood_snowy -> selMood = 4
+                R.id.mood_rainbow -> selMood = 5
+            }
+        }
+
+        mood_sunny.setOnClickListener(clickListener)
+        mood_rainy.setOnClickListener(clickListener)
+        mood_cloudy.setOnClickListener(clickListener)
+        mood_snowy.setOnClickListener(clickListener)
+        mood_rainbow.setOnClickListener(clickListener)
+
         try {
             val bundle : Bundle = intent.extras!!
             id = bundle.getInt("ID", 0)
@@ -42,23 +56,12 @@ class AddNoteActivity : AppCompatActivity() {
         } catch (ex:Exception) {}
     }
 
-    fun onClick(view: View?){
-        when (view?.id) {
-            R.id.mood_sunny -> selEmotion = 1
-            R.id.mood_rainy -> selEmotion = 2
-            R.id.mood_cloudy -> selEmotion = 3
-            R.id.mood_snowy -> selEmotion = 4
-            R.id.mood_rainbow -> selEmotion = 5
-            else -> selEmotion = 5
-        }
-    }
-
     fun addFunc(view:View) {
         var dbManager = noteDBManager(this)
         var values = ContentValues()
         values.put("Title", edtTitle.text.toString())
         values.put("Description", edtDesc.text.toString())
-        values.put("Mood", selEmotion)
+        values.put("Mood", selMood)
 
         if (id == 0) {
             val ID = dbManager.insert(values)

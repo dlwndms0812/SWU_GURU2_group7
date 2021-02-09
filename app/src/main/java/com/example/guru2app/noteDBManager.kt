@@ -24,7 +24,7 @@ class noteDBManager {
 
     //CREATE TABLE IF NOT EXISTS MyNotes (ID INTEGER PRIMARY KEY,title TEXT, Description TEXT);"
     val sqlCreateTable = "CREATE TABLE IF NOT EXISTS " + dbTable + " (" + colID +
-            " INTEGER PRIMARY KEY," + colTitle + " TEXT, " + colDes + " TEXT);"
+            " INTEGER PRIMARY KEY," + colTitle + " TEXT, " + colDes + " TEXT, " + colMood + " TEXT);"
 
     var sqlDB: SQLiteDatabase? = null
 

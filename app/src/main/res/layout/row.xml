@@ -26,6 +26,7 @@
             android:gravity="right">
 
             <TextView
+                android:id="@+id/tvDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -33,9 +34,10 @@
                 android:text="작성 날짜" />
 
             <ImageView
+                android:id="@+id/ivMood"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_wb_sunny_24" />
+                android:src="@drawable/ic_question" />
 
 
         </LinearLayout>
