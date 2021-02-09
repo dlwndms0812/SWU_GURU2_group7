@@ -106,6 +106,7 @@
 
     <!--    노트 페이지-->
     <string name="choose_weather">마음의 날씨를 선택하세요</string>
+    <string name="wDate">작성 날짜</string>
     <string name="noteTitle">제목을 입력하세요</string>
     <string name="noteContents">내용을 입력하세요</string>
     <string name="enter">입력</string>
