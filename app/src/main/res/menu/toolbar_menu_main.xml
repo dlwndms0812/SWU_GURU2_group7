@@ -11,3 +11,4 @@
         android:id="@+id/action_logout"
         android:title="@string/logout" />
 </menu>
+

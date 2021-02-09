@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--로그인 페이지-->
-<androidx.constraintlayout.widget.ConstraintLayout tools:context=".MainActivity"
+<androidx.constraintlayout.widget.ConstraintLayout
+    tools:context=".MainActivity"
     android:layout_height="match_parent"
     android:layout_width="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,7 +17,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -25,15 +26,14 @@
     <!--타이틀 이미지-->
     <ImageView
         android:id="@+id/titleName_login"
-        android:layout_width="274dp"
-        android:layout_height="135dp"
+        android:layout_width="238dp"
+        android:layout_height="105dp"
         android:contentDescription="@string/StringValue"
         app:layout_constraintBottom_toTopOf="@+id/login_heart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/login_background"
-        app:layout_constraintVertical_bias="0.416"
+        app:layout_constraintVertical_bias="0.391"
         app:srcCompat="@drawable/title_name" />
 
     <!--아이디 입력-->
@@ -76,14 +76,13 @@
         android:id="@+id/login_heart"
         android:layout_width="71dp"
         android:layout_height="41dp"
+        android:contentDescription="@string/StringValue"
         app:layout_constraintBottom_toBottomOf="@+id/login_background"
         app:layout_constraintEnd_toEndOf="@+id/login_background"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.46"
-        app:srcCompat="@drawable/ic_heart"
-        android:contentDescription="@string/StringValue"/>
+        app:layout_constraintVertical_bias="0.449"
+        app:srcCompat="@drawable/ic_heart" />
 
     <!--로그인 버튼-->
     <Button

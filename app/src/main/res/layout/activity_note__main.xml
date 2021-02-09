@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--note 적는 페이지-->
+<!--note 목록 페이지(다이어리 메인)-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
- 
+
     <!--배경 이미지-->
     <ImageView
         android:id="@+id/Note_mainBack"
@@ -19,6 +19,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--마음다이어리 글씨-->
+    <ImageView
+        android:id="@+id/Note_main_text"
+        android:layout_width="118dp"
+        android:layout_height="42dp"
+        android:contentDescription="@string/StringValue"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:layout_constraintVertical_bias="0.3"
+        app:srcCompat="@drawable/diary_text" />
+
     <!--상단 툴바-->
     <include
         android:id="@+id/include"
@@ -29,12 +43,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--기록된 다이어리 뷰-->
+    <!--기록된 다이어리 갯수-->
+    <TextView
+        android:id="@+id/countDiary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:text="@string/countEdt"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Note_main_text" />
 
+    <!--기록된 다이어리 뷰-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
-        android:layout_height="492dp"
+        android:layout_height="468dp"
         android:layout_marginTop="9dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
@@ -46,10 +73,11 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="492dp"
+            android:layout_height="0dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
@@ -87,18 +115,5 @@
         tools:ignore="MissingConstraints">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="118dp"
-        android:layout_height="42dp"
-        android:scaleType="fitCenter"
-        android:contentDescription="@string/StringValue"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include"
-        app:srcCompat="@drawable/diary_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
