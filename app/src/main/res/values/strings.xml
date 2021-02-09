@@ -1,3 +1,4 @@
+<!--하드코딩 X-->
 <resources>
     <!--앱 이름-->
     <string name="app_name">날, 보러와요</string>
