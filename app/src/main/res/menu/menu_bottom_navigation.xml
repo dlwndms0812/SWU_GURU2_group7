@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--하단 네비게이션바-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--캘린더 메뉴-->
+    <item
+        android:id="@+id/calendarTab"
+        android:checked="true"
+        android:icon="@drawable/ic_calendar"
+        android:title="@string/menu_title1"
+        app:showAsAction="ifRoom" />
+
+    <!--다이어리 메뉴-->
+    <item
+        android:id="@+id/diaryTab"
+        android:enabled="true"
+        android:icon="@drawable/ic_diary"
+        android:title="@string/menu_title2"
+        app:showAsAction="ifRoom" />
+
+    <!--음악/영화/취미 추천-->
+    <item
+        android:id="@+id/mediaTab"
+        android:enabled="true"
+        android:icon="@drawable/ic_media"
+        android:title="@string/menu_title3"
+        app:showAsAction="ifRoom" />
+
+</menu>

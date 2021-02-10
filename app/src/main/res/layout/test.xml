@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--추천 영화 보여주는 페이지-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?attr/actionBarSize">
+
+        <!--배경 이미지-->
+        <ImageView
+            android:id="@+id/movieBack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/StringValue"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/back" />
+
+        <!--상단 툴바-->
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_not"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="14dp"/>
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="546dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="548dp">
+
+                    <!--movie 글씨 이미지-->
+                    <ImageView
+                        android:id="@+id/movie_text"
+                        android:layout_width="75dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="35dp"
+                        android:contentDescription="@string/StringValue"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.047"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/movie_text" />
+
+                    <!--선택된 날씨 아이콘으로 변경될 이미지 부분-->
+                    <ImageView
+                        android:id="@+id/weather_icon"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:contentDescription="@string/StringValue"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.939"
+                        app:layout_constraintStart_toEndOf="@+id/movie_text"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.875"
+                        app:srcCompat="@drawable/sunny" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="464dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/movie_text">
+
+                        <!--추천 영화 콘텐츠 나열해놓은 부분-->
+                        <include
+                            android:id="@+id/media_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1sp" />
+
+                        <include
+                            android:id="@+id/media_2"
+                            layout="@layout/media_contents"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1sp" />
+
+                        <include
+                            android:id="@+id/media_3"
+                            layout="@layout/media_contents"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1sp" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--하단 네비게이션바-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@color/cloudColor"
+        app:itemTextColor="@color/cloudColor"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/menu_bottom_navigation" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
