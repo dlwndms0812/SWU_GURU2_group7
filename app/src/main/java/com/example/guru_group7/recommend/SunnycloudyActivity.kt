@@ -10,6 +10,7 @@ import com.example.guru_group7.R
 //sunnycloudy와 cloudy 바꼈을 수도 있음
 class SunnycloudyActivity: AppCompatActivity() {
     lateinit var imgBtn_music : ImageButton
+    lateinit var imgBtn_hobby : ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
@@ -20,5 +21,11 @@ class SunnycloudyActivity: AppCompatActivity() {
             startActivity(intent)
         }
 
+        imgBtn_hobby = findViewById<ImageButton>(R.id.imgBtn_hobby)
+
+        imgBtn_music.setOnClickListener {
+            var intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=cWGM0oU58Q0"))
+            startActivity(intent)
+        }
     }
 }

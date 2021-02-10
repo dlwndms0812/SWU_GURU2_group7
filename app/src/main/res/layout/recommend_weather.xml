@@ -1,13 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--음악/영화/취미 추천 페이지, 날씨 선택 페이지-->
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".Recommend_weather"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="날씨기반 추천 페이지. 테스트용임 나중에 제대로 할 예정"/>
+    <!--배경 이미지-->
+    <ImageView
+        android:id="@+id/weatherBack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/StringValue"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/back" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="602dp"
+        android:layout_marginBottom="?attr/actionBarSize">
+
+        <!--상단 툴바-->
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="14dp" />
+
+        <!--맑음 버튼-->
+        <ImageButton
+            android:id="@+id/btn_sunny"
+            android:layout_width="105dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/button_round"
+            android:contentDescription="@string/StringValue"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weather_text1"
+            app:srcCompat="@drawable/sunny" />
+
+        <!--조금 흐림 버튼-->
+        <ImageButton
+            android:id="@+id/btn_sunCloudy"
+            android:layout_width="105dp"
+            android:layout_height="95dp"
+            android:layout_marginBottom="220dp"
+            android:background="@drawable/button_round"
+            android:contentDescription="@string/StringValue"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.438"
+            app:layout_constraintStart_toEndOf="@+id/weather_text2"
+            app:srcCompat="@drawable/cloudy" />
+
+        <!--흐림 버튼-->
+        <ImageButton
+            android:id="@+id/btn_cloudy"
+            android:layout_width="105dp"
+            android:layout_height="95dp"
+            android:layout_marginBottom="220dp"
+            android:background="@drawable/button_round"
+            android:contentDescription="@string/StringValue"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/weather_text2"
+            app:layout_constraintHorizontal_bias="0.578"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/sun_cloudy" />
+
+        <!--비 버튼-->
+        <ImageButton
+            android:id="@+id/btn_rainy"
+            android:layout_width="105dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginBottom="84dp"
+            android:background="@drawable/button_round"
+            android:contentDescription="@string/StringValue"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/rainy" />
+
+        <!--눈 버튼-->
+        <ImageButton
+            android:id="@+id/btn_snowy"
+            android:layout_width="105dp"
+            android:layout_height="95dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="84dp"
+            android:background="@drawable/button_round"
+            android:contentDescription="@string/StringValue"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/snowy" />
+
+        <!--마음 알약-->
+        <ImageView
+            android:id="@+id/weather_text1"
+            android:layout_width="122dp"
+            android:layout_height="31dp"
+            android:contentDescription="@string/StringValue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.034"
+            app:srcCompat="@drawable/weather_text1" />
+
+        <!--오늘 당신의 마음 날씨는? 글씨 부분-->
+        <ImageView
+            android:id="@+id/weather_text2"
+            android:layout_width="87dp"
+            android:layout_height="74dp"
+            android:contentDescription="@string/StringValue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.552"
+            app:srcCompat="@drawable/weather_text2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--하단 네비게이션바-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:menu="@menu/menu_bottom_navigation"
+        app:labelVisibilityMode="unlabeled"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@color/cloudColor"
+        app:itemTextColor="@color/cloudColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

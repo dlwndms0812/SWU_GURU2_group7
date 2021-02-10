@@ -1,3 +1,126 @@
 <resources>
-    <string name="app_name">guru_group7</string>
+    <string name="app_name">날, 보러와요</string>
+
+    <!--로그인 부분-->
+    <string name="ID"> 아이디</string>
+    <string name="str_password"> 비밀번호</string>
+    <string name="login"> 로그인</string>
+    <string name="join_yet">앗, 아직 회원이 아니신가요?</string>
+    <string name="join_us">회원가입</string>
+
+    <!--회원가입 부분-->
+    <string name="name"> 이름</string>
+    <string name="check">확인</string>
+    <string name="str_passwd_check"> 비밀번호 확인</string>
+    <string name="cancel"> 취소</string>
+
+    <!--비밀번호 변경-->
+    <string name="emailAddress">이메일 주소</string>
+    <string name="change_passwd">비밀번호 변경</string>
+    <string name="goLoginPage">로그인 페이지로</string>
+
+    <!--캘린더-->
+    <string name="how">오늘 하루는 어땠나요?</string>
+    <string name="delete">삭제</string>
+    <string name="modify">수정</string>
+    <string name="save">저장</string>
+
+    <!--노래/영화/음악 추천-->
+    <string name="recommend_text">당신의 마음과 함께 할,</string>
+    <string name="mind_weather">오늘 당신의\n마음 날씨는?</string>
+    <string name="menu_title1">Calendar</string>
+    <string name="menu_title2">Diary</string>
+    <string name="menu_title3">Media</string>
+    <string name="menu_title4">MY Page</string>
+    <string name="music">MUSIC</string>
+    <string name="movie">MOVIE</string>
+    <string name="hobby">HOBBY</string>
+
+    <!--영화 추천-->
+    <!--sunny-->
+    <string name="movie_sunny_title1">마녀 배달부 키키</string>
+    <string name="movie_sunny_title2">맘마미아</string>
+    <string name="movie_sunny_title3">500일의 썸머</string>
+    <string name="movie_sunny_title4">라라랜드</string>
+    <string name="movie_sunny_title5">수상한 그녀</string>
+
+    <string name="movie_sunny_info1">감독-미야자키 하야오\n장르-애니메이션, 모험, 판타지, 가족</string>
+    <string name="movie_sunny_info2">감독-필리다 로이드\n장르-코미디, 뮤지컬, 멜로/로맨스</string>
+    <string name="movie_sunny_info3">감독-마크 웹\n장르-코미디, 드라마, 멜로/로맨스</string>
+    <string name="movie_sunny_info4">감독-데이미언 셔젤\n장르-드라마, 뮤지컬, 멜로/로맨스</string>
+    <string name="movie_sunny_info5">감독-황동혁\n장르-코미디, 드라마</string>
+
+    <!--sunnycloudy-->
+    <string name="movie_sunnycloudy_title1">날씨의 아이</string>
+    <string name="movie_sunnycloudy_title2">리틀 포레스트</string>
+    <string name="movie_sunnycloudy_title3">나는 내일, 어제의 너와 만난다</string>
+    <string name="movie_sunnycloudy_title4">비긴 어게인</string>
+    <string name="movie_sunnycloudy_title5">소울</string>
+
+    <string name="movie_sunnycloudy_info1">감독-신카이 마코토\n장르-애니메이션</string>
+    <string name="movie_sunnycloudy_info2">감독-임순례\n장르-드라마</string>
+    <string name="movie_sunnycloudy_info3">감독-미키 타카히로\n장르-멜로/로맨스, 판타지</string>
+    <string name="movie_sunnycloudy_info4">감독-존 카니\n장르-드라마, 멜로/로맨스, 코미디</string>
+    <string name="movie_sunnycloudy_info5">감독-피트 닥터\n장르-애니메이션</string>
+
+    <!--cloudy-->
+    <string name="movie_cloudy_title1">안녕, 헤이즐</string>
+    <string name="movie_cloudy_title2">포레스트 검프</string>
+    <string name="movie_cloudy_title3">내 머리 속의 지우개</string>
+    <string name="movie_cloudy_title4">인터스텔라</string>
+    <string name="movie_cloudy_title5">킹스맨:시크릿 에이전트</string>
+
+    <string name="movie_cloudy_info1">감독-조쉬 분\n장르-드라마, 멜로/로맨스</string>
+    <string name="movie_cloudy_info2">감독-로버트 저메키스\n장르-드라마, 코미디</string>
+    <string name="movie_cloudy_info3">감독-이재한\n장르-멜로/로맨스, 코미디, 드라마</string>
+    <string name="movie_cloudy_info4">감독-크리스토퍼 놀란\n장르-SF</string>
+    <string name="movie_cloudy_info5">감독-매튜 본\n장르-액션, 스릴러</string>
+
+    <!--rainy-->
+    <string name="movie_rainy_title1">지금, 만나러 갑니다</string>
+    <string name="movie_rainy_title2">노트북</string>
+    <string name="movie_rainy_title3">클래식</string>
+    <string name="movie_rainy_title4">살인의 추억</string>
+    <string name="movie_rainy_title5">컨저링</string>
+
+    <string name="movie_rainy_info1">감독-도이 노부히로\n장르-멜로/로맨스, 드라마, 판타지</string>
+    <string name="movie_rainy_info2">감독-닉 카사베츠\n장르-멜로/로맨스, 드라마</string>
+    <string name="movie_rainy_info3">감독-곽재용\n장르-멜로/로맨스, 드라마</string>
+    <string name="movie_rainy_info4">감독-봉준호\n장르-범죄, 미스터리, 스릴러, 코미디, 드라마</string>
+    <string name="movie_rainy_info5">감독-제임스 완\n장르-공포 스릴러</string>
+
+    <!--snowy-->
+    <string name="movie_snowy_title1">이터널 션샤인</string>
+    <string name="movie_snowy_title2">겨울왕국</string>
+    <string name="movie_snowy_title3">러브레터</string>
+    <string name="movie_snowy_title4">설국열차</string>
+    <string name="movie_snowy_title5">러브 액츄얼리</string>
+
+    <string name="movie_snowy_info1">감독-미셸 공드리\n장르-멜로/로맨스, 드라마, SF</string>
+    <string name="movie_snowy_info2">감독-크리스 벅, 제니퍼 리\n장르-애니메이션, 모험, 코미디, 가족, 판타지, 뮤지컬</string>
+    <string name="movie_snowy_info3">감독-이와이 슌지\n장르-드라마, 멜로/로맨스</string>
+    <string name="movie_snowy_info4">감독-봉준호\n장르-SF,액션,드라마</string>
+    <string name="movie_snowy_info5">감독-리차드 커티스\n장르-멜로/로맨스, 드라마, 코미디</string>
+
+    <!--    노트 페이지-->
+    <string name="choose_weather">마음의 날씨를 선택하세요</string>
+    <string name="wDate">작성 날짜</string>
+    <string name="noteTitle">제목을 입력하세요</string>
+    <string name="noteContents">내용을 입력하세요</string>
+    <string name="enter">입력</string>
+    <string name="countEdt">총 0개의 기록이 있습니다.</string>
+
+    <!--음악/영화/취미 콘텐츠 한개-->
+    <string name="content">content</string>
+    <string name="title">TITLE</string>
+
+    <!--메뉴-->
+    <string name="logout">로그아웃</string>
+    <string name="setting">설정</string>
+    <string name="search">검색</string>
+    <string name="add_note">추가</string>
+
+    <!--예외처리-->
+    <string name="StringValue">이미지 오류</string>
+
 </resources>

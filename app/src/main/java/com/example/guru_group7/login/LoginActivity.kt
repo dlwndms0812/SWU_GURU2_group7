@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.login)
 
         val gosignup= Intent(this, SignupActivity::class.java)
-        val nextpage=Intent(this, RecommendActivity::class.java)
+
 
         loginBtn=findViewById<Button>(R.id.loginBtn)
         loginid=findViewById<EditText>(R.id.join_id)
@@ -39,7 +39,6 @@ class LoginActivity : AppCompatActivity() {
 
         loginBtn.setOnClickListener{
             login()
-            startActivity(nextpage)
         }
         signuppageBtn.setOnClickListener{
             startActivity(gosignup)
@@ -56,7 +55,8 @@ class LoginActivity : AppCompatActivity() {
                     //Sign in success, update UI with the signed-in user's information
                     Toast.makeText(this,"로그인 성공",Toast.LENGTH_SHORT).show()
                     val user=firebaseAuth?.currentUser
-                    //여기다가 인텐트 하기
+                    val nextpage=Intent(this, RecommendActivity::class.java)
+                    startActivity(nextpage)
 
                 } else {
                     //If sign in fails, display a message to the user
