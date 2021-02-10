@@ -53,8 +53,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-}
+    //하단 네비게이션 바바
+    implementation 'androidx.navigation:navigation-fragment:2.3.2'
+    implementation 'com.google.android.material:material:1.2.0-alpha05'
 
+}
 apply plugin: 'com.android.application'
 // Add this line
 apply plugin: 'com.google.gms.google-services'

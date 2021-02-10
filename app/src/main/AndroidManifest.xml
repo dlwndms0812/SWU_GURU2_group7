@@ -9,25 +9,9 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo_main"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Guru_group7">
-        <activity android:name=".calendar.CalendarActivity"></activity>
-        <activity android:name=".login.LoginActivity"></activity>
-        <activity android:name=".login.SignupActivity"></activity>
-        <activity android:name=".login.PasswordActivity"></activity>
-        <activity android:name=".recommend.RecommendActivity"></activity>
-        <activity android:name=".recommend.CloudyActivity"></activity>
-        <activity android:name=".recommend.RainyActivity"></activity>
-        <activity android:name=".recommend.SnowActivity"></activity>
-        <activity android:name=".recommend.SunnyActivity"></activity>
-        <activity android:name=".recommend.SunnycloudyActivity"></activity>
-        <activity android:name=".recommend.CloudyMovie"></activity>
-        <activity android:name=".recommend.RainyMovie"></activity>
-        <activity android:name=".recommend.SnowMovie"></activity>
-        <activity android:name=".recommend.SunnyCloudyMovie"></activity>
-        <activity android:name=".recommend.SunnyMovie"></activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".note.AddNoteActivity"></activity>
-        <activity android:name=".note.NoteMainActivity"></activity>
+        android:theme="@style/Theme.Guru_group7"
+        android:hardwareAccelerated="false">
+
         <activity android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -35,7 +19,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".calendar.CalendarActivity"></activity>
+        <activity android:name=".login.LoginActivity"></activity>
+        <activity android:name=".login.SignupActivity"></activity>
+        <activity android:name=".login.PasswordActivity"></activity>
+        <activity android:name=".recommend.RecommendActivity"></activity>
+        <activity android:name=".recommend.CloudyActivity"></activity>
+        <activity android:name=".recommend.CloudyMovie"></activity>
+        <activity android:name=".recommend.RainyActivity"></activity>
+        <activity android:name=".recommend.RainyMovie"></activity>
+        <activity android:name=".recommend.SnowActivity"></activity>
+        <activity android:name=".recommend.SnowMovie"></activity>
+        <activity android:name=".recommend.SunnyActivity"></activity>
+        <activity android:name=".recommend.SunnycloudyActivity"></activity>
+        <activity android:name=".recommend.SunnyCloudyMovie"></activity>
+        <activity android:name=".recommend.SunnyMovie"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".note.AddNoteActivity"></activity>
+        <activity android:name=".note.NoteMainActivity"></activity>
     </application>
 
 </manifest>

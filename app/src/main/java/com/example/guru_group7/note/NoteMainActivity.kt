@@ -12,10 +12,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.example.guru_group7.R
-// latient 설정X
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.row.*
-import kotlinx.android.synthetic.main.row.view.*
+import kotlinx.android.synthetic.main.activity_note_main.*
+import kotlinx.android.synthetic.main.activity_note_row.*
+import kotlinx.android.synthetic.main.activity_note_row.view.*
 
 class NoteMainActivity:AppCompatActivity() {
     // 표시할 데이터(다이어리 내용)
@@ -23,7 +22,7 @@ class NoteMainActivity:AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.이걸 어디랑 연결하지)
+        setContentView(R.layout.activity_add_note)
 
         // DB에서 읽어오기
         LoadQuery("%")
@@ -114,7 +113,7 @@ class NoteMainActivity:AppCompatActivity() {
         }
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
             //inflate layout row.xml
-            var myView = layoutInflater.inflate(R.layout.row, null)
+            var myView = layoutInflater.inflate(R.layout.activity_note_row, null)
             val myNote = listNotesAdapter[position]
             myView.tvTitle.text = myNote.nodeName
             myView.tvDesc.text = myNote.nodeDes

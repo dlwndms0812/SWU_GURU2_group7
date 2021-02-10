@@ -17,9 +17,10 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/back" />
 
     <!--상단 툴바-->
@@ -44,13 +45,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/calendar_text" />
 
     <!--캘린더-->
     <CalendarView
         android:id="@+id/calendarView"
-        android:layout_width="339dp"
-        android:layout_height="275dp"
+        android:layout_width="327dp"
+        android:layout_height="298dp"
         android:layout_margin="7dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
@@ -61,102 +63,97 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include"
-        app:layout_constraintVertical_bias="0.267" />
+        app:layout_constraintVertical_bias="0.14" />
 
     <!--날짜-->
     <TextView
         android:id="@+id/dateTextView"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintButtom_toBottomOf="@+id/calendarBack"
+        app:layout_constraintBottom_toTopOf="@+id/diaryEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+        app:layout_constraintTop_toBottomOf="@+id/calendarView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <!--적는 부분-->
     <EditText
         android:id="@+id/diaryEditText"
         android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="90dp"
         android:autofillHints="no"
         android:ems="10"
         android:hint="@string/how"
         android:inputType="textMultiLine"
+        android:textSize="14sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/calendarBack"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateTextView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/calendarView"
+        app:layout_constraintVertical_bias="0.366" />
 
     <!--적었던 기록-->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="92dp"
+        android:layout_height="90dp"
         android:textAlignment="textStart"
+        android:textSize="14sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/diaryEditText"
-        app:layout_constraintStart_toStartOf="@+id/diaryEditText"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateTextView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.13" />
 
-    <!--삭제-->
+    <!--삭제 버튼-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnDel"
         android:layout_width="140dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="50dp"
+        android:layout_height="40dp"
         android:background="@drawable/button_media"
         android:text="@string/delete"
         android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.826"
-        app:layout_constraintStart_toEndOf="@+id/btnEdit"
-        app:layout_constraintTop_toBottomOf="@+id/diaryEditText" />
+        app:layout_constraintHorizontal_bias="0.845"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.411" />
 
-    <!--수정-->
+    <!--수정 버튼-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnEdit"
         android:layout_width="140dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="40dp"
         android:background="@drawable/button_media"
         android:text="@string/modify"
         android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/diaryEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.4" />
 
-    <!--저장-->
+    <!--저장 버튼-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSave"
         android:layout_width="180dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="40dp"
         android:background="@drawable/button_media"
         android:text="@string/save"
         android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/diaryEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/diaryEditText"
+        app:layout_constraintVertical_bias="0.4" />
 
     <!--하단 네비게이션 바-->
     <com.google.android.material.bottomnavigation.BottomNavigationView

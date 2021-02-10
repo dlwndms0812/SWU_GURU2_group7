@@ -2,7 +2,7 @@
     <string name="app_name">날, 보러와요</string>
 
     <!--로그인 부분-->
-    <string name="ID"> 아이디</string>
+    <string name="ID"> 이메일</string>
     <string name="str_password"> 비밀번호</string>
     <string name="login"> 로그인</string>
     <string name="join_yet">앗, 아직 회원이 아니신가요?</string>

@@ -21,6 +21,7 @@ class SignupActivity() :AppCompatActivity(), Parcelable {
     lateinit var joinpassword: EditText
     lateinit var signupBtn: Button
     lateinit var deleteBtn: Button
+    lateinit var join_pwck:EditText
 
     constructor(parcel: Parcel) : this() {
 
@@ -36,12 +37,18 @@ class SignupActivity() :AppCompatActivity(), Parcelable {
         joinpassword = findViewById<EditText>(R.id.Join_password)
         signupBtn = findViewById<Button>(R.id.signup_Btn)
         deleteBtn = findViewById<Button>(R.id.delete_Btn)
+        join_pwck=findViewById<EditText>(R.id.join_pwck)
 
-        //이름은 걍 냅두고 비밀번호 확인이랑 비밀번호랑 다르면 if문으로 sign버튼 안눌리게 하기
-        signupBtn.setOnClickListener {
-            sign()
-            startActivity(gologin)
-        }
+            signupBtn.setOnClickListener {
+                if(join_pwck==joinpassword) {
+                    sign()
+                    startActivity(gologin)
+                }else{
+                    Toast.makeText(this, "비밀번호가 다릅니다", Toast.LENGTH_LONG).show()
+
+                }
+            }
+
         deleteBtn.setOnClickListener {
             startActivity(gologin)
         }

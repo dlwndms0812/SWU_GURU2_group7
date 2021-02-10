@@ -10,7 +10,6 @@ import com.example.guru_group7.R
 import java.lang.Exception
 import kotlinx.android.synthetic.main.activity_add_note.*
 
-//변수선언 해야할거같은디...........
 
 class AddNoteActivity:AppCompatActivity() {
     private var id = 0
