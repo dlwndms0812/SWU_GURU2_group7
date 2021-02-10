@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Recommend_media"
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,13 +54,25 @@
                     android:layout_height="wrap_content">
 
                     <!--당신의 마음과 함께 할, 글씨 이미지-->
+                    <ImageView
+                        android:id="@+id/cloudy_text"
+                        android:layout_width="220dp"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="16dp"
+                        android:contentDescription="@string/StringValue"
+                        app:layout_constraintBottom_toTopOf="@+id/imgBtn_music"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.83"
+                        app:srcCompat="@drawable/media_text" />
 
                     <!--음악 이미지 버튼-->
                     <ImageButton
                         android:id="@+id/imgBtn_music"
                         android:layout_width="322dp"
                         android:layout_height="186dp"
-                        android:layout_marginTop="116dp"
+                        android:layout_marginTop="130dp"
                         android:background="#00FFFFFF"
                         android:foreground="@drawable/music_recommend"
                         android:scaleType="centerCrop"
@@ -100,16 +111,6 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imgBtn_movie" />
 
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="220dp"
-                        android:layout_height="32dp"
-                        app:layout_constraintBottom_toTopOf="@+id/imgBtn_music"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.67"
-                        app:srcCompat="@drawable/media_text" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

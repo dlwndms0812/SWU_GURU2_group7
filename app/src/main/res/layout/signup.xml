@@ -9,12 +9,14 @@
         android:id="@+id/join_usBack"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:contentDescription="@string/StringValue"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/login_back"
-        android:contentDescription="@string/StringValue"/>
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/login_back" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -44,69 +46,55 @@
         android:id="@+id/join_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="4dp"
         android:autofillHints="no"
         android:ems="10"
         android:hint="@string/name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/join_id"
-        app:layout_constraintEnd_toEndOf="@+id/check_button"
-        app:layout_constraintHorizontal_bias="0.929"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/join_id"
-        android:layout_width="165dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:autofillHints="no"
-        android:ems="10"
-        android:hint="@string/ID"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/Join_password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.431"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/join_usBack"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/Join_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
+        android:autofillHints="no"
         android:ems="10"
         android:hint="@string/str_password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/join_pwck"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:autofillHints="no" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/join_pwck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="180dp"
+        android:layout_marginBottom="212dp"
+        android:autofillHints="no"
         android:ems="10"
         android:hint="@string/str_passwd_check"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:autofillHints="no" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-
-
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/check_button"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginEnd="84dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/ic_checked_checkbox"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/ic_baseline_check_circle_24"
         android:backgroundTint="@color/cloudColor"
         app:layout_constraintBottom_toTopOf="@+id/Join_password"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintHorizontal_bias="0.227"
         app:layout_constraintStart_toEndOf="@+id/join_id" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -114,7 +102,7 @@
         android:layout_width="93dp"
         android:layout_height="47dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="132dp"
         android:background="@drawable/button_media"
         android:backgroundTint="@color/pink"
         android:text="@string/cancel"
@@ -126,7 +114,7 @@
         android:layout_width="93dp"
         android:layout_height="47dp"
         android:layout_marginStart="100dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="132dp"
         android:background="@drawable/button_media"
         android:backgroundTint="@color/pink"
         android:text="@string/join_us"
@@ -134,5 +122,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <EditText
+        android:id="@+id/join_id"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:autofillHints="no"
+        android:ems="10"
+        android:hint="@string/ID"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/Join_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

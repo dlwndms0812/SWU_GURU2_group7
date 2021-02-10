@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--Sunny 추천 영화 보여주는 페이지-->
+<!--snowy 추천 영화 보여주는 페이지-->
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -27,34 +26,35 @@
             app:srcCompat="@drawable/back" />
 
         <!--movie 글씨 부분-->
+
+        <!--선택된 날씨로 변경될 아이콘 부분-->
         <ImageView
             android:id="@+id/movie_text"
             android:layout_width="75dp"
             android:layout_height="30dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="140dp"
             android:contentDescription="@string/StringValue"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintHorizontal_bias="0.05"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/movie_text" />
 
-        <!--선택된 날씨로 변경될 아이콘 부분-->
+        <!--상단 툴바-->
         <ImageView
             android:id="@+id/weather_icon"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="140dp"
             android:contentDescription="@string/StringValue"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.943"
+            app:layout_constraintHorizontal_bias="0.95"
             app:layout_constraintStart_toEndOf="@+id/movie_text"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/snowy" />
 
-        <!--상단 툴바-->
         <include
             android:id="@+id/toolbar"
             layout="@layout/toolbar_not"
@@ -65,14 +65,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ScrollView
-            android:layout_width="407dp"
-            android:layout_height="464dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="120dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0">
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -293,7 +292,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.96"/>
+                        app:layout_constraintVertical_bias="0.96" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <!--영화5-->
@@ -332,7 +331,7 @@
                         android:textColor="#000000"
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"  />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/snowy_text_sub_title5"
@@ -347,7 +346,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.96"  />
+                        app:layout_constraintVertical_bias="0.96" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </ScrollView>
@@ -367,5 +366,3 @@
         app:menu="@menu/menu_bottom_navigation" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
