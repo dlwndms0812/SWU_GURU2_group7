@@ -3,11 +3,11 @@ package com.example.guru_group7
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.guru_group7.login.LoginActivity
 import com.example.guru_group7.login.PasswordActivity
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_note_main.*
 
 class Mypage:AppCompatActivity() {
     lateinit var btn_changepassword:Button
@@ -20,15 +20,22 @@ class Mypage:AppCompatActivity() {
         btn_changepassword=findViewById<Button>(R.id.btn_changePasswd)
         btn_logout=findViewById<Button>(R.id.btn_logout)
 
+
+        val go_login= Intent(this, LoginActivity::class.java)
+
         btn_changepassword.setOnClickListener {
-            val changepassword= Intent(this, PasswordActivity::class.java)
-            startActivity(changepassword)
+            password()
         }
 
         btn_logout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
-            val go_login= Intent(this, LoginActivity::class.java)
+            Toast.makeText(this,"로그아웃 성공", Toast.LENGTH_SHORT).show()
             startActivity(go_login)
         }
+    }
+    private fun password(){
+        val changepassword= Intent(this, PasswordActivity::class.java)
+        startActivity(changepassword)
+
     }
 }

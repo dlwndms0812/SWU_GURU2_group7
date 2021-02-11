@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--기본 툴바-->
+<!--툴바에 부가적인 기능 없는 경우(앱이름만 띄우고 싶은 경우에 사용)-->
 <androidx.appcompat.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/toolbar_design"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/cloudColor"
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    app:menu="@menu/toolbar_menu_main">
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
 
         <!--하트 아이콘-->
         <ImageView
-            android:id="@+id/toolbarMain_icon"
+            android:id="@+id/toolbarNot_icon"
             android:layout_width="39dp"
             android:layout_height="27dp"
             android:layout_marginStart="4dp"
@@ -31,14 +31,14 @@
 
         <!--앱 이름-->
         <ImageView
-            android:id="@+id/toolbarMain_title"
+            android:id="@+id/toolbarNot_title"
             android:layout_width="108dp"
             android:layout_height="26dp"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/toolbarMain_icon"
+            app:layout_constraintStart_toEndOf="@+id/toolbarNot_icon"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/title_name"
