@@ -46,8 +46,8 @@ class NoteMainActivity:AppCompatActivity() {
                 val Title = cursor.getString(cursor.getColumnIndex("Title"))
                 val Description = cursor.getString(cursor.getColumnIndex("Description"))
                 val Mood = cursor.getInt(cursor.getColumnIndex("Mood"))
-
-                listNotes.add(Note(ID, Title, Description, Mood))
+                val Date=cursor.getString(cursor.getColumnIndex("Description"))
+                listNotes.add(Note(ID, Title, Description, Mood,Date))
 
             } while (cursor.moveToNext())
         }
@@ -127,6 +127,7 @@ class NoteMainActivity:AppCompatActivity() {
                 else -> myView.ivMood.setImageResource(R.drawable.ic_question)
             }
 
+            myView.tvDatetime.text = myNote.nodeDate // 날짜 추가
             //삭제 버튼 클릭 시
             myView.deleteBtn.setOnClickListener {
                 var dbManager = noteDBManager(this.context!!)
@@ -189,6 +190,7 @@ class NoteMainActivity:AppCompatActivity() {
         intent.putExtra("name", myNote.nodeName) //ut name
         intent.putExtra("desc", myNote.nodeDes) //put description
         intent.putExtra("mood", myNote.nodeMood)
+        intent.putExtra("date",myNote.nodeDate)
         startActivity(intent) //start activity
     }
 

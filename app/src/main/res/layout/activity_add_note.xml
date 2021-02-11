@@ -195,6 +195,44 @@
                     android:layout_margin="10dp"
                     android:orientation="vertical">
 
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!--작성 날짜-->
+                        <TextView
+                            android:id="@+id/tvDate"
+                            android:layout_width="301dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:paddingRight="4dp"
+                            android:text="@string/wDate"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.05"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="RtlCompat,RtlHardcoded,RtlSymmetry" />
+
+                        <!--작성날짜 설정 버튼-->
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/button"
+                            android:layout_width="70dp"
+                            android:layout_height="33dp"
+                            android:background="@drawable/button_media"
+                            android:backgroundTint="@color/cloudColor"
+                            android:text="@string/dateSetting"
+                            android:textColor="#4E4C4C"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/tvDate"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
                     <!--제목을 입력하세요 EditText-->
                     <EditText
                         android:id="@+id/edtTitle"

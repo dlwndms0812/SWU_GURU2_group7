@@ -19,26 +19,5 @@ class MainActivity :AppCompatActivity() {
         startActivity(go_login)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.toolbar_menu_main,menu)
-        return true
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item?.itemId) {
-            R.id.action_changePasswd -> {
-                val go_changePasswd = Intent(this, PasswordActivity::class.java)
-                startActivity(go_changePasswd)
-                return true
-            }
-
-            R.id.action_logout->{
-                FirebaseAuth.getInstance().signOut()
-                val go_login= Intent(this, LoginActivity::class.java)
-                startActivity(go_login)
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
 }

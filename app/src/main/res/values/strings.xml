@@ -102,13 +102,14 @@
     <string name="movie_snowy_info4">감독-봉준호\n장르-SF,액션,드라마</string>
     <string name="movie_snowy_info5">감독-리차드 커티스\n장르-멜로/로맨스, 드라마, 코미디</string>
 
-    <!--    노트 페이지-->
+    <!--다이어리 페이지-->
     <string name="choose_weather">마음의 날씨를 선택하세요</string>
     <string name="wDate">작성 날짜</string>
     <string name="noteTitle">제목을 입력하세요</string>
     <string name="noteContents">내용을 입력하세요</string>
     <string name="enter">입력</string>
     <string name="countEdt">총 0개의 기록이 있습니다.</string>
+    <string name="dateSetting">날짜 선택</string>
 
     <!--음악/영화/취미 콘텐츠 한개-->
     <string name="content">content</string>

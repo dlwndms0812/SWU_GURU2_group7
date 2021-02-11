@@ -59,6 +59,7 @@ class RecommendActivity:AppCompatActivity() {
         val calendarFragment = CalendarFragment()
         val noteFragment = NoteFragment()
         val mediaFragment = MediaFragment()
+        val mypageFragment= MypageFragment()
 
 
         bottomNavigationView.setOnNavigationItemReselectedListener { item ->
@@ -74,6 +75,10 @@ class RecommendActivity:AppCompatActivity() {
                 R.id.mediaTab -> {
                     // Log.d("태그","미디어")
                     makeCurrentFragment(mediaFragment)
+                }
+                R.id.myPageTab->{
+                    //Log.d("태그","마이페이지")
+                    makeCurrentFragment(mypageFragment)
                 }
             }
             true

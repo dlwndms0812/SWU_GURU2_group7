@@ -31,7 +31,7 @@ class SunnycloudyActivity: AppCompatActivity() {
             startActivity(intent)
         }
         imgBtn_movie.setOnClickListener{
-            startActivity(Intent(this,CloudyMovie::class.java))
+            startActivity(Intent(this,SunnyCloudyMovie::class.java))
         }
     }
 }

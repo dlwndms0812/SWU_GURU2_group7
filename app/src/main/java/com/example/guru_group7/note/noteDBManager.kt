@@ -18,12 +18,13 @@ class noteDBManager {
     var colTitle = "Title"
     var colDes = "Description"
     var colMood = "Mood"
+    var colDate="Date"
     // 데이터 베이스 버전
     var dbVersion = 1
 
     //CREATE TABLE IF NOT EXISTS MyNotes (ID INTEGER PRIMARY KEY,title TEXT, Description TEXT);"
     val sqlCreateTable = "CREATE TABLE IF NOT EXISTS " + dbTable + " (" + colID +
-            " INTEGER PRIMARY KEY," + colTitle + " TEXT, " + colDes + " TEXT, " + colMood + " TEXT);"
+            " INTEGER PRIMARY KEY," + colTitle + " TEXT, " + colDes + " TEXT, " + colMood + " TEXT, "+colDate+" TEXT);"
 
     var sqlDB: SQLiteDatabase? = null
 

@@ -30,7 +30,7 @@ class RainyActivity: AppCompatActivity() {
             startActivity(intent)
         }
         imgBtn_movie.setOnClickListener{
-            startActivity(Intent(this,CloudyMovie::class.java))
+            startActivity(Intent(this,RainyMovie::class.java))
         }
 
     }

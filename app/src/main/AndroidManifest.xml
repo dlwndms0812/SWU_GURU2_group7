@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".calendar.CalendarActivity"></activity>
+        <activity android:name=".calendar.CalendarActivity"/>
         <activity android:name=".login.LoginActivity"></activity>
         <activity android:name=".login.SignupActivity"></activity>
         <activity android:name=".login.PasswordActivity"></activity>
@@ -37,6 +37,7 @@
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".note.AddNoteActivity"></activity>
         <activity android:name=".note.NoteMainActivity"></activity>
+        <activity android:name=".Mypage"></activity>
     </application>
 
 </manifest>

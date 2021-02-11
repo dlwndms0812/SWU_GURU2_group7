@@ -29,7 +29,7 @@ class SnowActivity: AppCompatActivity() {
             startActivity(intent)
         }
         imgBtn_movie.setOnClickListener{
-            startActivity(Intent(this,CloudyMovie::class.java))
+            startActivity(Intent(this,SnowMovie::class.java))
         }
 
     }

@@ -23,7 +23,11 @@ class PasswordActivity:AppCompatActivity() {
         email=findViewById<EditText>(R.id.email)
 
         val go_login= Intent(this, LoginActivity::class.java)
-        startActivity(go_login)
+
+        gologinBtn.setOnClickListener {
+            startActivity(go_login)
+        }
+
 
         change_Btn.setOnClickListener {
             changePassword()
