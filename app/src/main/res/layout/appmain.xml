@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--메뉴 선택(로그인 후 바로 보이는 화면)-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--배경 이미지-->
+    <ImageView
+        android:id="@+id/menuBack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/StringValue"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+    <!--상단 툴바-->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_layout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="1.0">
+
+        <!--menu-->
+        <ImageView
+            android:id="@+id/app_menu"
+            android:layout_width="127dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/StringValue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.154"
+            app:srcCompat="@drawable/menu" />
+
+        <!--어떤메뉴? 텍스트-->
+        <ImageView
+            android:id="@+id/menu_choice"
+            android:layout_width="233dp"
+            android:layout_height="76dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/StringValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/app_menu"
+            app:srcCompat="@drawable/menu_choice" />
+
+        <!--칭찬 캘린더 버튼-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_calendar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/button_main"
+            android:contentDescription="@string/StringValue"
+            android:foreground="@drawable/ic_baseline_date_range_24"
+            android:foregroundTint="#FFFFFF"
+            android:scaleType="centerCrop"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/menu_choice" />
+
+        <!--마음 다이어리 버튼-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_diary"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/button_main"
+            android:contentDescription="@string/StringValue"
+            android:foreground="@drawable/ic_diary"
+            android:foregroundTint="#FFFFFF"
+            android:scaleType="centerCrop"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.758"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/menu_choice" />
+
+        <!--마음알약 버튼-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_recommend"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/button_main"
+            android:contentDescription="@string/StringValue"
+            android:foreground="@drawable/ic_baseline_favorite_24"
+            android:foregroundTint="#FFFFFF"
+            android:scaleType="centerCrop"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_calendar" />
+
+        <!--마이페이지-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_myPage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/button_main"
+            android:contentDescription="@string/StringValue"
+            android:foreground="@drawable/ic_baseline_manage_accounts_24"
+            android:foregroundTint="#FFFFFF"
+            android:scaleType="centerCrop"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.758"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_diary" />
+
+        <!--칭찬캘린더 텍스트-->
+        <ImageView
+            android:id="@+id/calendar"
+            android:layout_width="77dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="9dp"
+            android:contentDescription="@string/StringValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_calendar"
+            app:srcCompat="@drawable/calendar_text" />
+
+        <!--마음 다이어리 텍스트-->
+        <ImageView
+            android:id="@+id/diary"
+            android:layout_width="81dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="82dp"
+            android:contentDescription="@string/StringValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_diary"
+            app:srcCompat="@drawable/diary_text" />
+
+        <!--마음 알약 텍스트-->
+        <ImageView
+            android:id="@+id/recommend"
+            android:layout_width="72dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="95dp"
+            android:layout_marginTop="19dp"
+            android:contentDescription="@string/StringValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_recommend"
+            app:srcCompat="@drawable/weather_text1" />
+
+        <!--마이페이지 텍스트-->
+        <ImageView
+            android:id="@+id/mypage"
+            android:layout_width="63dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="91dp"
+            android:contentDescription="@string/StringValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_myPage"
+            app:srcCompat="@drawable/mypage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

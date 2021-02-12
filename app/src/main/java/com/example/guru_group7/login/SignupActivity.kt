@@ -40,13 +40,8 @@ class SignupActivity() :AppCompatActivity(), Parcelable {
         join_pwck=findViewById<EditText>(R.id.join_pwck)
 
             signupBtn.setOnClickListener {
-                if(join_pwck==joinpassword) {
                     sign()
                     startActivity(gologin)
-                }else{
-                    Toast.makeText(this, "비밀번호가 다릅니다", Toast.LENGTH_LONG).show()
-
-                }
             }
 
         deleteBtn.setOnClickListener {
@@ -54,15 +49,15 @@ class SignupActivity() :AppCompatActivity(), Parcelable {
         }
     }
 
-
+    //회원 가입 구현
     private fun sign(){
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(joinid.text.toString(),joinpassword.text.toString())
-                .addOnCompleteListener {task->
+                .addOnCompleteListener {task-> Toast.makeText(this, "가입 성공", Toast.LENGTH_LONG).show()
                     if(task.isSuccessful) {
-                        Toast.makeText(this, "가입 성공", Toast.LENGTH_LONG).show()
+
 
                     } else {
-                        Toast.makeText(this, "가입 실패", Toast.LENGTH_LONG).show()
+                        //Toast.makeText(this, "가입 실패", Toast.LENGTH_LONG).show()
                 }
             }
 

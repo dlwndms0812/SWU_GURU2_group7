@@ -8,23 +8,26 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.database.sqlite.SQLiteQueryBuilder
 import android.widget.Toast
 
-class noteDBManager {
+class NoteDBManager {
     // 데이터베이스명
     var dbName = "MyNote"
+
     // 테이블명
     var dbTable = "Notes"
+
     // columns
     var colID = "ID"
     var colTitle = "Title"
     var colDes = "Description"
     var colMood = "Mood"
-    var colDate="Date"
+    var colDate = "Date"
+
     // 데이터 베이스 버전
     var dbVersion = 1
 
     //CREATE TABLE IF NOT EXISTS MyNotes (ID INTEGER PRIMARY KEY,title TEXT, Description TEXT);"
     val sqlCreateTable = "CREATE TABLE IF NOT EXISTS " + dbTable + " (" + colID +
-            " INTEGER PRIMARY KEY," + colTitle + " TEXT, " + colDes + " TEXT, " + colMood + " TEXT, "+colDate+" TEXT);"
+            " INTEGER PRIMARY KEY," + colTitle + " TEXT, " + colDes + " TEXT, " + colMood + " TEXT, " + colDate + " TEXT);"
 
     var sqlDB: SQLiteDatabase? = null
 

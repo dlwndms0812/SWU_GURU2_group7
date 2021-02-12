@@ -81,7 +81,7 @@ class CalendarActivity:AppCompatActivity() {
 
 
             btnSave.setOnClickListener { // 저장 Button이 클릭되면
-                Toast.makeText(this, "일기를 저장했습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
                 var str_diary: String = diaryEditText.text.toString() // str 변수에 일기 내용을 toString 형으로 저장
                 var str_date: String = dateTextView.text.toString() // str 변수에 날짜를 toString 형으로 저장
 
@@ -114,7 +114,7 @@ class CalendarActivity:AppCompatActivity() {
                 var str_date: String = dateTextView.text.toString() // str 변수에 날짜를 toString 형으로 저장
 
                 diaryEditText.setText("")
-                Toast.makeText(this, "일기를 삭제했습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "삭제되었습니다.", Toast.LENGTH_SHORT).show()
                 sqlitedb = dbManager.writableDatabase
                 sqlitedb.execSQL("DELETE FROM diaryTBL WHERE date='"+ str_date + "';")
                 sqlitedb.close()

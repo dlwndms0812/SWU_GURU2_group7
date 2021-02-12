@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.guru_group7.Appmain
 import com.example.guru_group7.R
 import com.example.guru_group7.recommend.RecommendActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -22,7 +23,6 @@ class LoginActivity : AppCompatActivity() {
     lateinit var signuppageBtn:Button
 
 
-    //[START onCreate]
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
@@ -44,22 +44,22 @@ class LoginActivity : AppCompatActivity() {
             startActivity(gosignup)
         }
     }
-    //[END onCreate]
 
 
-    //Email SignIn
+
+    //로그인 구현
     private fun login(){
         firebaseAuth!!.signInWithEmailAndPassword(loginid.text.toString(),loginpassword.text.toString())
             .addOnCompleteListener(this){
+                //로그인 성공하면 화면 이동
                 if(it.isSuccessful) {
                     //Sign in success, update UI with the signed-in user's information
                     Toast.makeText(this,"로그인 성공",Toast.LENGTH_SHORT).show()
                     val user=firebaseAuth?.currentUser
-                    val nextpage=Intent(this, RecommendActivity::class.java)
+                    val nextpage=Intent(this, Appmain::class.java)
                     startActivity(nextpage)
 
                 } else {
-                    //If sign in fails, display a message to the user
                     Toast.makeText(this, "로그인 실패",Toast.LENGTH_SHORT).show()
                 }
 
@@ -69,5 +69,3 @@ class LoginActivity : AppCompatActivity() {
 
 }
 
-//참고자료
-//https://gigas-blog.tistory.com/77

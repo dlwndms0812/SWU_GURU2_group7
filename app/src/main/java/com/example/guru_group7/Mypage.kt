@@ -23,10 +23,12 @@ class Mypage:AppCompatActivity() {
 
         val go_login= Intent(this, LoginActivity::class.java)
 
+        //비밀번호변경 버튼을 누르면 비밀번호 변경페이지로 이동
         btn_changepassword.setOnClickListener {
             password()
         }
 
+        //로그아웃 버튼을 누르면 로그아웃이 되고 로그인화면으로 이동
         btn_logout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             Toast.makeText(this,"로그아웃 성공", Toast.LENGTH_SHORT).show()

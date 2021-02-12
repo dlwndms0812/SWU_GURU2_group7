@@ -38,6 +38,7 @@
         <activity android:name=".note.AddNoteActivity"/>
         <activity android:name=".note.NoteMainActivity"/>
         <activity android:name=".Mypage"/>
+        <activity android:name=".Appmain"/>
     </application>
 
 </manifest>

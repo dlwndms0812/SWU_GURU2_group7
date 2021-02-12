@@ -1,122 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--음악/영화/취미 추천, 음악, 영화, 취미 중 택1 페이지-->
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--음악/영화/취미 추천________맑음 음악, 영화, 취미 중 택1 페이지-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/media_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/media_layout"
+    <!--배경 이미지-->
+    <ImageView
+        android:id="@+id/mediaBack"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="?attr/actionBarSize">
+        android:contentDescription="@string/StringValue"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
 
-        <!--배경 이미지-->
-        <ImageView
-            android:id="@+id/mediaBack"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/StringValue"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/back" />
+    <!--상단 툴바-->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <!--상단 툴바-->
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar_not"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="58dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mediaBack">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="vertical">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="58dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mediaBack">
-
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                <!--당신의 마음과 함께 할, 글씨 이미지-->
+                <ImageView
+                    android:id="@+id/sunny_text"
+                    android:layout_width="220dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="@string/StringValue"
+                    app:layout_constraintBottom_toTopOf="@+id/imgBtn_music"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.77"
+                    app:srcCompat="@drawable/media_text"/>
 
-                    <!--당신의 마음과 함께 할, 글씨 이미지-->
-                    <ImageView
-                        android:id="@+id/cloudy_text"
-                        android:layout_width="220dp"
-                        android:layout_height="32dp"
-                        android:layout_marginTop="16dp"
-                        android:contentDescription="@string/StringValue"
-                        app:layout_constraintBottom_toTopOf="@+id/imgBtn_music"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.83"
-                        app:srcCompat="@drawable/media_text" />
+                <!--음악 이미지 버튼-->
+                <ImageButton
+                    android:id="@+id/imgBtn_music"
+                    android:layout_width="322dp"
+                    android:layout_height="186dp"
+                    android:layout_marginTop="140dp"
+                    android:background="#00FFFFFF"
+                    android:contentDescription="@string/StringValue"
+                    android:foreground="@drawable/music_recommend"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.505"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <!--음악 이미지 버튼-->
-                    <ImageButton
-                        android:id="@+id/imgBtn_music"
-                        android:layout_width="322dp"
-                        android:layout_height="186dp"
-                        android:layout_marginTop="130dp"
-                        android:background="#00FFFFFF"
-                        android:foreground="@drawable/music_recommend"
-                        android:scaleType="centerCrop"
-                        android:contentDescription="@string/StringValue"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.505"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                <!--영화 이미지 버튼-->
+                <ImageButton
+                    android:id="@+id/imgBtn_movie"
+                    android:layout_width="322dp"
+                    android:layout_height="186dp"
+                    android:layout_marginTop="24dp"
+                    android:foreground="@drawable/movie_recommend"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/StringValue"
+                    app:layout_constraintBottom_toTopOf="@+id/imgBtn_hobby"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgBtn_music" />
 
-                    <!--영화 이미지 버튼-->
-                    <ImageButton
-                        android:id="@+id/imgBtn_movie"
-                        android:layout_width="322dp"
-                        android:layout_height="186dp"
-                        android:layout_marginTop="24dp"
-                        android:foreground="@drawable/movie_recommend"
-                        android:scaleType="centerCrop"
-                        android:contentDescription="@string/StringValue"
-                        app:layout_constraintBottom_toTopOf="@+id/imgBtn_hobby"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imgBtn_music" />
+                <!--취미 이미지 버튼-->
+                <ImageButton
+                    android:id="@+id/imgBtn_hobby"
+                    android:layout_width="322dp"
+                    android:layout_height="186dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="8dp"
+                    android:foreground="@drawable/hobby_recommend"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/StringValue"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgBtn_movie" />
 
-                    <!--취미 이미지 버튼-->
-                    <ImageButton
-                        android:id="@+id/imgBtn_hobby"
-                        android:layout_width="322dp"
-                        android:layout_height="186dp"
-                        android:layout_marginTop="24dp"
-                        android:layout_marginBottom="8dp"
-                        android:foreground="@drawable/hobby_recommend"
-                        android:scaleType="centerCrop"
-                        android:contentDescription="@string/StringValue"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imgBtn_movie" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
+        </LinearLayout>
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
-            </LinearLayout>
-
-        </ScrollView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -116,6 +116,11 @@
     <string name="title">TITLE</string>
 
     <!--메뉴-->
+    <string name="calendar">칭찬 캘린더</string>
+    <string name="diary">마음 다이어리</string>
+    <string name="recommend">마음 알약</string>
+    <string name="my_page">마이페이지</string>
+    <string name="what_menu">원하시는 메뉴를 선택해주세요</string>
     <string name="logout">로그아웃</string>
     <string name="setting">설정</string>
     <string name="search">검색</string>
@@ -125,3 +130,4 @@
     <string name="StringValue">이미지 오류</string>
 
 </resources>
+

@@ -1,10 +1,10 @@
 package com.example.guru_group7.note
 
-import androidx.appcompat.app.AppCompatActivity
 import android.app.SearchManager
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -12,20 +12,30 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.example.guru_group7.R
+import com.example.guru_group7.note.AddNoteActivity
+import com.example.guru_group7.note.Note
+import com.example.guru_group7.note.NoteDBManager
+import kotlinx.android.synthetic.main.activity_add_note.*
+// latient 설정X
 import kotlinx.android.synthetic.main.activity_note_main.*
 import kotlinx.android.synthetic.main.activity_note_row.*
 import kotlinx.android.synthetic.main.activity_note_row.view.*
 
-class NoteMainActivity:AppCompatActivity() {
+class NoteMainActivity : AppCompatActivity() {
     // 표시할 데이터(다이어리 내용)
     val listNotes = ArrayList<Note>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_note)
+        setContentView(R.layout.activity_note_main)
 
         // DB에서 읽어오기
         LoadQuery("%")
+
+        // 추가하기 버튼
+        addBtn.setOnClickListener {
+            startActivity(Intent(this, AddNoteActivity::class.java))
+        }
     }
 
     override fun onResume() {
@@ -34,8 +44,8 @@ class NoteMainActivity:AppCompatActivity() {
     }
 
     private fun LoadQuery(title: String) {
-        var dbManager = noteDBManager(this)
-        val projections = arrayOf("ID", "Title", "Description", "Mood")
+        var dbManager = NoteDBManager(this)
+        val projections = arrayOf("ID", "Title", "Description", "Mood", "Date")
         val selectionArgs = arrayOf(title)
         val cursor = dbManager.Query(projections, "Title like ?", selectionArgs, "Title")
         listNotes.clear()
@@ -46,8 +56,9 @@ class NoteMainActivity:AppCompatActivity() {
                 val Title = cursor.getString(cursor.getColumnIndex("Title"))
                 val Description = cursor.getString(cursor.getColumnIndex("Description"))
                 val Mood = cursor.getInt(cursor.getColumnIndex("Mood"))
-                val Date=cursor.getString(cursor.getColumnIndex("Description"))
-                listNotes.add(Note(ID, Title, Description, Mood,Date))
+                val Date = cursor.getString(cursor.getColumnIndex("Date"))
+
+                listNotes.add(Note(ID, Title, Description, Mood, Date))
 
             } while (cursor.moveToNext())
         }
@@ -59,12 +70,8 @@ class NoteMainActivity:AppCompatActivity() {
 
         //get total number of tasks from ListView
         val total = lvNotes.count
-        //actionbar
-        val mActionBar = supportActionBar
-        if (mActionBar != null) {
-            //actionbar 밑에 띄움
-            mActionBar.subtitle = "총 $total 개의 메모가 있습니다."
-        }
+        //수정
+        countDiary.text = "총 $total 개의 기록이 있습니다."
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -89,20 +96,6 @@ class NoteMainActivity:AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item != null) {
-            when (item.itemId) {
-                R.id.addNote -> {
-                    startActivity(Intent(this, AddNoteActivity::class.java))
-                }
-                R.id.action_settings -> {
-                    Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
     inner class MyNotesAdapter : BaseAdapter {
         var listNotesAdapter = ArrayList<Note>()
         var context: Context? = null
@@ -119,18 +112,19 @@ class NoteMainActivity:AppCompatActivity() {
             myView.tvDesc.text = myNote.nodeDes
             var selMood = myNote.nodeMood
             when {
-                selMood == 1 -> myView.ivMood.setImageResource(R.drawable.ic_baseline_wb_sunny_24)
-                selMood == 2 -> myView.ivMood.setImageResource(R.drawable.ic_baseline_umbrella_24)
-                selMood == 3 -> myView.ivMood.setImageResource(R.drawable.ic_baseline_wb_cloudy_24)
-                selMood == 4 -> myView.ivMood.setImageResource(R.drawable.ic_snowy16)
-                selMood == 5 -> myView.ivMood.setImageResource(R.drawable.ic_rainbow)
+                selMood == 1 -> myView.ivMood.setImageResource(R.drawable.ic_diary_sun)
+                selMood == 2 -> myView.ivMood.setImageResource(R.drawable.ic_diary_cloudy)
+                selMood == 3 -> myView.ivMood.setImageResource(R.drawable.ic_diary_cloud)
+                selMood == 4 -> myView.ivMood.setImageResource(R.drawable.ic_diary_rainy)
+                selMood == 5 -> myView.ivMood.setImageResource(R.drawable.ic_diary_snowy)
                 else -> myView.ivMood.setImageResource(R.drawable.ic_question)
             }
-
             myView.tvDatetime.text = myNote.nodeDate // 날짜 추가
+
+
             //삭제 버튼 클릭 시
             myView.deleteBtn.setOnClickListener {
-                var dbManager = noteDBManager(this.context!!)
+                var dbManager = NoteDBManager(this.context!!)
                 val selectionArgs = arrayOf(myNote.nodeID.toString())
                 dbManager.delete("ID=?", selectionArgs)
                 LoadQuery("%")
@@ -190,7 +184,7 @@ class NoteMainActivity:AppCompatActivity() {
         intent.putExtra("name", myNote.nodeName) //ut name
         intent.putExtra("desc", myNote.nodeDes) //put description
         intent.putExtra("mood", myNote.nodeMood)
-        intent.putExtra("date",myNote.nodeDate)
+        intent.putExtra("date", myNote.nodeDate)
         startActivity(intent) //start activity
     }
 

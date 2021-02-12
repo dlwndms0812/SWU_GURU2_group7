@@ -29,13 +29,13 @@
             android:id="@+id/movie_text"
             android:layout_width="75dp"
             android:layout_height="30dp"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="90dp"
             android:contentDescription="@string/StringValue"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintHorizontal_bias="0.02"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
             app:srcCompat="@drawable/movie_text" />
 
         <!--선택된 날씨로 변경될 아이콘 부분-->
@@ -43,19 +43,19 @@
             android:id="@+id/weather_icon"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="90dp"
             android:contentDescription="@string/StringValue"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.95"
             app:layout_constraintStart_toEndOf="@+id/movie_text"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
             app:srcCompat="@drawable/snowy" />
 
         <!--상단 툴바-->
         <include
             android:id="@+id/toolbar"
-            layout="@layout/toolbar_not"
+            layout="@layout/toolbar_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +65,7 @@
         <ScrollView
             android:layout_width="0dp"
             android:layout_height="533dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="130dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -75,6 +75,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingBottom="60dp"
                 android:orientation="vertical">
 
                 <!--영화1-->
@@ -350,7 +351,4 @@
             </LinearLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!--하단 네비게이션바-->
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

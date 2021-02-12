@@ -7,8 +7,11 @@ import android.content.ContentValues
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatImageButton
 import com.example.guru_group7.R
 import java.lang.Exception
 import kotlinx.android.synthetic.main.activity_add_note.*
@@ -18,34 +21,34 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 
 
-class AddNoteActivity:AppCompatActivity() {
+class AddNoteActivity : AppCompatActivity() {
     private var id = 0
     private var selMood = 0
-    //val date = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
-    lateinit var mood_sunny: Button
-    lateinit var mood_rainy: Button
-    lateinit var mood_cloudy: Button
-    lateinit var mood_snowy: Button
-    lateinit var mood_rainbow: Button
 
-    lateinit var dateBtn: Button
-    lateinit var dateTv: TextView
+    lateinit var mood_sunny: AppCompatImageButton
+    lateinit var mood_rainy: AppCompatImageButton
+    lateinit var mood_cloudy: AppCompatImageButton
+    lateinit var mood_snowy: AppCompatImageButton
+    lateinit var mood_rainbow: AppCompatImageButton
+
+    lateinit var tvDate: TextView
+    lateinit var dateBtn: AppCompatButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_note)
 
-        mood_sunny = findViewById<Button>(R.id.mood_sunny)
-        mood_rainy = findViewById<Button>(R.id.mood_rainy)
-        mood_cloudy = findViewById<Button>(R.id.mood_cloudy)
-        mood_snowy = findViewById<Button>(R.id.mood_snowy)
-        mood_rainbow = findViewById<Button>(R.id.mood_rainbow)
-        dateBtn=findViewById<Button>(R.id.button)
-        dateTv=findViewById<TextView>(R.id.tvDate)
+        mood_sunny = findViewById<AppCompatImageButton>(R.id.mood_sunny)
+        mood_rainy = findViewById<AppCompatImageButton>(R.id.mood_rainy)
+        mood_cloudy = findViewById<AppCompatImageButton>(R.id.mood_cloudy)
+        mood_snowy = findViewById<AppCompatImageButton>(R.id.mood_snowy)
+        mood_rainbow = findViewById<AppCompatImageButton>(R.id.mood_rainbow)
+        tvDate = findViewById<TextView>(R.id.tvDate)
+        dateBtn = findViewById<AppCompatButton>(R.id.button)
 
         val current = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))
 
-        dateTv.setText(current) // 시간 기본 설정
+        tvDate.setText(current) // 시간 기본 설정
 
         val clickListener = View.OnClickListener { view ->
             when (view.getId()) {
@@ -59,14 +62,13 @@ class AddNoteActivity:AppCompatActivity() {
                 }
             }
         }
-        dateBtn.setOnClickListener(clickListener)
-
 
         mood_sunny.setOnClickListener(clickListener)
         mood_rainy.setOnClickListener(clickListener)
         mood_cloudy.setOnClickListener(clickListener)
         mood_snowy.setOnClickListener(clickListener)
         mood_rainbow.setOnClickListener(clickListener)
+        dateBtn.setOnClickListener(clickListener)
 
         try {
             val bundle : Bundle = intent.extras!!
@@ -74,7 +76,6 @@ class AddNoteActivity:AppCompatActivity() {
             if (id != 0) {
                 edtTitle.setText(bundle.getString("name"))
                 edtDesc.setText(bundle.getString("desc"))
-
             }
         } catch (ex:Exception) {
         }
@@ -89,22 +90,27 @@ class AddNoteActivity:AppCompatActivity() {
         val startHour = currentDateTime.get(Calendar.HOUR_OF_DAY)
         val startMinute = currentDateTime.get(Calendar.MINUTE)
 
-        DatePickerDialog(this, DatePickerDialog.OnDateSetListener { _, year, month, day ->
-            TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { _, hour, minute ->
-                val pickedDateTime = Calendar.getInstance()
-                pickedDateTime.set(year, month, day, hour, minute)
-                tvDate.setText(SimpleDateFormat("yyyy-MM-dd HH:mm").format(pickedDateTime.time))
-            }, startHour, startMinute, false).show()
-        }, startYear, startMonth, startDay).show()
+        try{
+            DatePickerDialog(this, DatePickerDialog.OnDateSetListener { _, year, month, day ->
+                TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { _, hour, minute ->
+                    val pickedDateTime = Calendar.getInstance()
+                    pickedDateTime.set(year, month, day, hour, minute)
+                    tvDate.setText(SimpleDateFormat("yyyy-MM-dd HH:mm").format(pickedDateTime.time))
+                }, startHour, startMinute, false).show()
+            }, startYear, startMonth, startDay).show()
+        } catch (ex:Exception) {
+
+        }
     }
 
 
     fun addFunc(view:View) {
-        var dbManager = noteDBManager(this)
+        var dbManager = NoteDBManager(this)
         var values = ContentValues()
         values.put("Title", edtTitle.text.toString())
         values.put("Description", edtDesc.text.toString())
         values.put("Mood", selMood)
+        values.put("Date", tvDate.text.toString())
 
         if (id == 0) {
             val ID = dbManager.insert(values)

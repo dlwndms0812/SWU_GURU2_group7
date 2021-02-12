@@ -34,6 +34,7 @@ class PasswordActivity:AppCompatActivity() {
         }
     }
 
+    //비밀번호 변경구현
     fun changePassword(){
         FirebaseAuth.getInstance().sendPasswordResetEmail(email.text.toString())
                 .addOnCompleteListener{task->
