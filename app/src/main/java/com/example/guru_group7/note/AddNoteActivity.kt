@@ -115,7 +115,7 @@ class AddNoteActivity : AppCompatActivity() {
         if (id == 0) {
             val ID = dbManager.insert(values)
             if (ID > 0) {
-                Toast.makeText(this, "노트가 추가되었습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "추가되었습니다.", Toast.LENGTH_SHORT).show()
                 finish()
             } else {
                 Toast.makeText(this, "과정 중 에러가 발생했습니다.", Toast.LENGTH_SHORT).show()
@@ -124,7 +124,7 @@ class AddNoteActivity : AppCompatActivity() {
             var selectionArgs = arrayOf(id.toString())
             val ID = dbManager.update(values, "ID=?", selectionArgs)
             if (ID > 0) {
-                Toast.makeText(this, "노트가 추가되었습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "추가되었습니다.", Toast.LENGTH_SHORT).show()
                 finish()
             } else {
                 Toast.makeText(this, "과정 중 에러가 발생했습니다.", Toast.LENGTH_SHORT).show()

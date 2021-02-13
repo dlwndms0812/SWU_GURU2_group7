@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import com.example.guru_group7.R
 import com.google.firebase.auth.FirebaseAuth
 
@@ -22,6 +23,7 @@ class SignupActivity() :AppCompatActivity(), Parcelable {
     lateinit var signupBtn: Button
     lateinit var deleteBtn: Button
     lateinit var join_pwck:EditText
+    lateinit var check_button:AppCompatButton
 
     constructor(parcel: Parcel) : this() {
 
@@ -38,28 +40,39 @@ class SignupActivity() :AppCompatActivity(), Parcelable {
         signupBtn = findViewById<Button>(R.id.signup_Btn)
         deleteBtn = findViewById<Button>(R.id.delete_Btn)
         join_pwck=findViewById<EditText>(R.id.join_pwck)
+        check_button=findViewById<AppCompatButton>(R.id.check_button)
 
-            signupBtn.setOnClickListener {
-                    sign()
-                    startActivity(gologin)
+        signupBtn.setOnClickListener {
+            //입력한 비밀번호와 비밀번호 확인에 입력한 비밀번호가 같을 시 회원가입 성공
+            if(join_pwck.text.toString().equals(join_pwck.text.toString())) {
+                sign()
+                startActivity(gologin)
+            }else{
+                Toast.makeText(this, "비밀번호가 다릅니다", Toast.LENGTH_LONG).show()
+
             }
+        }
 
         deleteBtn.setOnClickListener {
             startActivity(gologin)
+        }
+
+        check_button.setOnClickListener {
+            Toast.makeText(this, "사용할 수 있는 이메일 입니다",Toast.LENGTH_LONG).show()
         }
     }
 
     //회원 가입 구현
     private fun sign(){
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(joinid.text.toString(),joinpassword.text.toString())
-                .addOnCompleteListener {task-> Toast.makeText(this, "가입 성공", Toast.LENGTH_LONG).show()
+                .addOnCompleteListener {task->
                     if(task.isSuccessful) {
-
+                        Toast.makeText(this, "가입 성공", Toast.LENGTH_LONG).show()
 
                     } else {
-                        //Toast.makeText(this, "가입 실패", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "가입 실패", Toast.LENGTH_LONG).show()
+                    }
                 }
-            }
 
     }
 

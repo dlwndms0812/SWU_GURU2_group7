@@ -128,6 +128,7 @@ class NoteMainActivity : AppCompatActivity() {
                 val selectionArgs = arrayOf(myNote.nodeID.toString())
                 dbManager.delete("ID=?", selectionArgs)
                 LoadQuery("%")
+                Toast.makeText(this@NoteMainActivity, "삭제되었습니다.", Toast.LENGTH_SHORT).show()
             }
             //수정 버튼 클릭 시
             myView.editBtn.setOnClickListener {
