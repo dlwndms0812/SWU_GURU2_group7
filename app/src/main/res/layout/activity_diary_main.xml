@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Diary 메인 화면-->
+<?xml version="1.0" encoding="utf-8"?><!--Diary 메인 화면-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,7 +13,7 @@
 
     <!--배경 이미지-->
     <ImageView
-        android:id="@+id/Note_mainBack"
+        android:id="@+id/Diary_mainBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/StringValue"
@@ -47,7 +46,7 @@
 
         <!--제목 글씨-->
         <ImageView
-            android:id="@+id/Note_main_text"
+            android:id="@+id/Diary_main_text"
             android:layout_width="126dp"
             android:layout_height="48dp"
             android:layout_marginTop="16dp"
@@ -71,13 +70,13 @@
             android:backgroundTintMode="screen"
             android:foreground="@drawable/button_media"
             android:foregroundTint="@color/cloudColor"
-            android:text="@string/add_note"
+            android:text="@string/add_diary"
             android:textColor="#494848"
             app:layout_constraintBottom_toTopOf="@+id/countDiary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Note_main_text" />
+            app:layout_constraintTop_toBottomOf="@+id/Diary_main_text" />
 
         <!--몇개의 다이어리가 있는지 보여주는 TextView-->
         <TextView
@@ -106,7 +105,7 @@
             tools:ignore="NotSibling">
 
             <ListView
-                android:id="@+id/lvNotes"
+                android:id="@+id/lvDiaries"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:divider="@null"

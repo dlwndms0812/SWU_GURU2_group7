@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--툴바에 부가적인 기능 없는 경우(앱이름만 띄우고 싶은 경우에 사용)-->
-<androidx.appcompat.widget.Toolbar
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/toolbar_design"
@@ -34,6 +33,7 @@
             android:id="@+id/toolbarNot_title"
             android:layout_width="108dp"
             android:layout_height="26dp"
+            android:contentDescription="@string/StringValue"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -41,8 +41,7 @@
             app:layout_constraintStart_toEndOf="@+id/toolbarNot_icon"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/title_name"
-            android:contentDescription="@string/StringValue" />
+            app:srcCompat="@drawable/title_name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

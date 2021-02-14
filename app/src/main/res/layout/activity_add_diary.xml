@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".note.AddNoteActivity">
+    tools:context=".diary.AddDiaryActivity">
 
     <!--다이어리 추가-->
 
     <!--배경 이미지-->
     <ImageView
-        android:id="@+id/Note_mainBack"
+        android:id="@+id/Diary_mainBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/StringValue"
         android:scaleType="centerCrop"
         android:src="@drawable/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/StringValue"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- 상단 툴바-->
     <include
@@ -65,12 +64,12 @@
 
                     <!--마음 날씨를 선택하세요-->
                     <ImageView
-                        android:id="@+id/addNote_text"
+                        android:id="@+id/addDiary_text"
                         android:layout_width="match_parent"
                         android:layout_height="46dp"
                         android:contentDescription="@string/StringValue"
                         android:scaleType="fitCenter"
-                        app:srcCompat="@drawable/note_text" />
+                        app:srcCompat="@drawable/diary_text" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -215,7 +214,7 @@
 
                         <!--작성날짜 설정 버튼-->
                         <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/button"
+                            android:id="@+id/dateBtn"
                             android:layout_width="70dp"
                             android:layout_height="33dp"
                             android:background="@drawable/button_media"
@@ -238,7 +237,7 @@
                         android:layout_height="wrap_content"
                         android:autofillHints="no"
                         android:backgroundTint="@color/white"
-                        android:hint="@string/noteTitle"
+                        android:hint="@string/diaryTitle"
                         android:padding="10dp"
                         android:singleLine="true"
                         android:textSize="16sp"
@@ -260,7 +259,7 @@
                         android:autofillHints="no"
                         android:backgroundTint="@color/white"
                         android:gravity="top"
-                        android:hint="@string/noteContents"
+                        android:hint="@string/diaryContents"
                         android:minHeight="100dp"
                         android:padding="10dp"
                         android:textSize="16sp" />
@@ -286,12 +285,12 @@
                     android:layout_marginBottom="3dp"
                     android:background="@drawable/button_media"
                     android:backgroundTint="@color/pink"
+                    android:onClick="addFunc"
                     android:text="@string/enter"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0"
-                    android:onClick="addFunc"/>
+                    app:layout_constraintVertical_bias="0.0" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

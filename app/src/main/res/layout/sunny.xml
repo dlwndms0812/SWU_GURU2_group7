@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--음악/영화/취미 추천________맑음 음악, 영화, 취미 중 택1 페이지-->
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/media_layout"
     android:layout_width="match_parent"
@@ -59,7 +58,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.77"
-                    app:srcCompat="@drawable/media_text"/>
+                    app:srcCompat="@drawable/media_text" />
 
                 <!--음악 이미지 버튼-->
                 <ImageButton
@@ -82,9 +81,9 @@
                     android:layout_width="322dp"
                     android:layout_height="186dp"
                     android:layout_marginTop="24dp"
+                    android:contentDescription="@string/StringValue"
                     android:foreground="@drawable/movie_recommend"
                     android:scaleType="centerCrop"
-                    android:contentDescription="@string/StringValue"
                     app:layout_constraintBottom_toTopOf="@+id/imgBtn_hobby"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -97,9 +96,9 @@
                     android:layout_height="186dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/StringValue"
                     android:foreground="@drawable/hobby_recommend"
                     android:scaleType="centerCrop"
-                    android:contentDescription="@string/StringValue"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

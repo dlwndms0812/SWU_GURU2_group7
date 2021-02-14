@@ -12,7 +12,7 @@ import androidx.appcompat.widget.AppCompatButton
 import com.example.guru_group7.R
 import com.google.firebase.auth.FirebaseAuth
 
-class SignupActivity() :AppCompatActivity(), Parcelable {
+class SignupActivity() : AppCompatActivity(), Parcelable {
     private val RC_SIGN_IN = 9001
 
     //Firebase Auth
@@ -22,13 +22,12 @@ class SignupActivity() :AppCompatActivity(), Parcelable {
     lateinit var joinpassword: EditText
     lateinit var signupBtn: Button
     lateinit var deleteBtn: Button
-    lateinit var join_pwck:EditText
-    lateinit var check_button:AppCompatButton
+    lateinit var join_pwck: EditText
+    lateinit var check_button: AppCompatButton
 
     constructor(parcel: Parcel) : this() {
 
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,15 +38,15 @@ class SignupActivity() :AppCompatActivity(), Parcelable {
         joinpassword = findViewById<EditText>(R.id.Join_password)
         signupBtn = findViewById<Button>(R.id.signup_Btn)
         deleteBtn = findViewById<Button>(R.id.delete_Btn)
-        join_pwck=findViewById<EditText>(R.id.join_pwck)
-        check_button=findViewById<AppCompatButton>(R.id.check_button)
+        join_pwck = findViewById<EditText>(R.id.join_pwck)
+        check_button = findViewById<AppCompatButton>(R.id.check_button)
 
         signupBtn.setOnClickListener {
             //입력한 비밀번호와 비밀번호 확인에 입력한 비밀번호가 같을 시 회원가입 성공
-            if(join_pwck.text.toString().equals(join_pwck.text.toString())) {
+            if (join_pwck.text.toString().equals(join_pwck.text.toString())) {
                 sign()
                 startActivity(gologin)
-            }else{
+            } else {
                 Toast.makeText(this, "비밀번호가 다릅니다", Toast.LENGTH_LONG).show()
 
             }
@@ -60,16 +59,17 @@ class SignupActivity() :AppCompatActivity(), Parcelable {
     }
 
     //회원 가입 구현
-    private fun sign(){
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(joinid.text.toString(),joinpassword.text.toString())
-                .addOnCompleteListener {task->
-                    if(task.isSuccessful) {
-                        Toast.makeText(this, "가입 성공", Toast.LENGTH_LONG).show()
+    private fun sign() {
+        FirebaseAuth.getInstance()
+            .createUserWithEmailAndPassword(joinid.text.toString(), joinpassword.text.toString())
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "가입 성공", Toast.LENGTH_LONG).show()
 
-                    } else {
-                        Toast.makeText(this, "가입 실패", Toast.LENGTH_LONG).show()
-                    }
+                } else {
+                    Toast.makeText(this, "가입 실패", Toast.LENGTH_LONG).show()
                 }
+            }
 
     }
 

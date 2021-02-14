@@ -6,12 +6,12 @@ import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.guru_group7.R
 
-class RecommendActivity:AppCompatActivity() {
+class RecommendActivity : AppCompatActivity() {
     lateinit var btn_sunny: ImageButton
-    lateinit var btn_rainy:ImageButton
-    lateinit var btn_cloudy:ImageButton
-    lateinit var btn_sunnycloudy:ImageButton
-    lateinit var btn_snowy:ImageButton
+    lateinit var btn_rainy: ImageButton
+    lateinit var btn_cloudy: ImageButton
+    lateinit var btn_sunnycloudy: ImageButton
+    lateinit var btn_snowy: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,9 +44,6 @@ class RecommendActivity:AppCompatActivity() {
             startActivity(go_snowy)
         }
 
-
-
     }
-
 
 }

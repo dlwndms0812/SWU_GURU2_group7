@@ -105,8 +105,8 @@
     <!--다이어리 페이지-->
     <string name="choose_weather">마음의 날씨를 선택하세요</string>
     <string name="wDate">작성 날짜</string>
-    <string name="noteTitle">제목을 입력하세요</string>
-    <string name="noteContents">내용을 입력하세요</string>
+    <string name="diaryTitle">제목을 입력하세요</string>
+    <string name="diaryContents">내용을 입력하세요</string>
     <string name="enter">입력</string>
     <string name="countEdt">총 0개의 기록이 있습니다.</string>
     <string name="dateSetting">날짜 선택</string>
@@ -124,7 +124,7 @@
     <string name="logout">로그아웃</string>
     <string name="setting">설정</string>
     <string name="search">검색</string>
-    <string name="add_note">추가</string>
+    <string name="add_diary">추가</string>
 
     <!--예외처리-->
     <string name="StringValue">이미지 오류</string>

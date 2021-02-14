@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--다이어리에 필요한 툴바-->
-<androidx.appcompat.widget.Toolbar
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar_design"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/cloudColor"
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    app:menu="@menu/toolbar_menu_sub">
+    app:menu="@menu/toolbar_menu_sub"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
