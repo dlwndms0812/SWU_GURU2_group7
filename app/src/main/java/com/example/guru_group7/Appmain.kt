@@ -23,6 +23,7 @@ class Appmain:AppCompatActivity() {
         btn_diary=findViewById<Button>(R.id.btn_diary)
         btn_mypage=findViewById<Button>(R.id.btn_myPage)
 
+        //각각 버튼 클릭시 해당 페이지로 이동
         btn_calendar.setOnClickListener {
             val go_caledar= Intent(this, CalendarActivity::class.java)
             startActivity(go_caledar)

@@ -62,7 +62,7 @@
         android:autofillHints="no"
         android:ems="10"
         android:hint="@string/str_password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textAlignment="textStart"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

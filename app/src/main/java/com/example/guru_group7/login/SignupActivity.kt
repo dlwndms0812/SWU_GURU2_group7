@@ -57,9 +57,6 @@ class SignupActivity() :AppCompatActivity(), Parcelable {
             startActivity(gologin)
         }
 
-        check_button.setOnClickListener {
-            Toast.makeText(this, "사용할 수 있는 이메일 입니다",Toast.LENGTH_LONG).show()
-        }
     }
 
     //회원 가입 구현

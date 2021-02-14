@@ -35,6 +35,7 @@ class PasswordActivity:AppCompatActivity() {
     }
 
     //비밀번호 변경구현
+    //버튼 누르면 해당 이메일로 비밀번호 변경 메일 전송
     fun changePassword(){
         FirebaseAuth.getInstance().sendPasswordResetEmail(email.text.toString())
                 .addOnCompleteListener{task->
