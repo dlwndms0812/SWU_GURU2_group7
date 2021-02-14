@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent">
+    app:layout_constraintStart_toStartOf="parent"
+    tools:context=".diary.DiaryMainActivity">
 
     <!--마음 다이어리-->
 
@@ -102,8 +103,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/countDiary"
             app:layout_constraintVertical_bias="0.050000012"
-            tools:ignore="NotSibling"
-            tools:context=".diary.DiaryMainActivity">
+            tools:ignore="NotSibling">
 
             <ListView
                 android:id="@+id/lvDiaries"
@@ -118,6 +118,5 @@
 
             </ListView>
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

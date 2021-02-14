@@ -10,6 +10,7 @@ import com.example.guru_group7.Appmain
 import com.example.guru_group7.R
 import com.google.firebase.auth.FirebaseAuth
 
+// 로그인 메인 부분
 class LoginActivity : AppCompatActivity() {
     //Google Login result
     private val RC_SIGN_IN = 9001
@@ -29,16 +30,19 @@ class LoginActivity : AppCompatActivity() {
 
         val gosignup = Intent(this, SignupActivity::class.java)
 
+        //각 id를 통해 View의 버튼 객체 연결
         loginBtn = findViewById<Button>(R.id.loginBtn)
         loginid = findViewById<EditText>(R.id.join_id)
         loginpassword = findViewById<EditText>(R.id.Join_password)
         signuppageBtn = findViewById<Button>(R.id.signup_page_Btn)
 
         firebaseAuth = FirebaseAuth.getInstance();
-
+        
+        // 로그인 버튼 터치
         loginBtn.setOnClickListener {
             login()
         }
+        // 회원가입 버튼 터치
         signuppageBtn.setOnClickListener {
             startActivity(gosignup)
         }

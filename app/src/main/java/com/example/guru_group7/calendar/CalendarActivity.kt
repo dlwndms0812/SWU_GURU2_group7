@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.*
 import com.example.guru_group7.R
 
+// 칭찬 캘린더 기능 구현
 class CalendarActivity : AppCompatActivity() {
     lateinit var calendarDbManager: CalendarDBManager
     lateinit var sqlitedb: SQLiteDatabase
@@ -34,7 +35,7 @@ class CalendarActivity : AppCompatActivity() {
         btnEdit = findViewById<Button>(R.id.btnEdit)
         btnDel = findViewById<Button>(R.id.btnDel)
 
-        calendarDbManager = CalendarDBManager(this, "diaryDB", null, 1)
+        calendarDbManager = CalendarDBManager(this, "calendarDB", null, 1)
 
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->  // 달력 날짜가 선택되면
 

@@ -75,7 +75,7 @@
             android:textAlignment="textStart"
             android:textSize="16sp"
             app:readMoreMaxLine="3"
-            app:readMoreText="더보기" />
+            app:readMoreText=" 더보기" />
 
         <!--구분선-->
         <View

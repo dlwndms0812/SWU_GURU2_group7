@@ -4,6 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
+// 칭찬 캘린더 DataBase Manager
 class CalendarDBManager(
     context: Context?,
     name: String?,

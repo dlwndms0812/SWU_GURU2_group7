@@ -5,8 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 
+//스플래시 화면 구현
 class SplashActivity : AppCompatActivity() {
-    val SPLASH_VIEW_TIME: Long = 3000 //2초간 스플래시 화면 보여줌
+    val SPLASH_VIEW_TIME: Long = 3000 //3초간 스플래시 화면 보여줌
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.guru_group7.R
 import com.google.firebase.auth.FirebaseAuth
 
+// 비밀번호 변경
 class PasswordActivity : AppCompatActivity() {
     lateinit var gologinBtn: Button
     lateinit var change_Btn: Button
@@ -18,16 +19,18 @@ class PasswordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.change_password)
 
+        //각 id를 통해 View의 버튼 객체 연결
         gologinBtn = findViewById<Button>(R.id.gologinBtn)
         change_Btn = findViewById<Button>(R.id.change_Btn)
         email = findViewById<EditText>(R.id.email)
 
         val go_login = Intent(this, LoginActivity::class.java)
 
+        //로그인 버튼 터치: 화면으로 이동
         gologinBtn.setOnClickListener {
             startActivity(go_login)
         }
-
+        //비밀번호 변경 버튼 터치
         change_Btn.setOnClickListener {
             changePassword()
         }
